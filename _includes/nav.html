@@ -1,0 +1,81 @@
+<nav
+  class="w-full flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg bg-main-400"
+  x-data="{ open: false }">
+  <div class="container px-4 mx-auto flex flex-wrap items-center justify-between">
+    <div class="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
+      <a class="font-logo flex-row text-2xl leading-relaxed inline-block mr-4 py-2 whitespace-nowrap text-white hover:text-accent-400"
+        href="/">
+        <span>AbitareSmart</span>
+      </a>
+      <button
+        class="cursor-pointer text-white text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
+        @click="open = !open" type="button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-menu-icon lucide-menu">
+          <path d="M4 12h16" />
+          <path d="M4 18h16" />
+          <path d="M4 6h16" />
+        </svg>
+      </button>
+    </div>
+    <div class="lg:flex flex-grow items-center bg-transparent lg:bg-transparent lg:shadow-none"
+      :class="{ 'hidden': !open, 'flex': open }">
+      {% comment %}
+      <ul class="flex flex-col lg:flex-row list-none mr-auto">
+        <li class="flex items-center">
+          <a class="lg:text-white lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
+            href="/blog"><i class="lg:text-gray-300 text-gray-500 far fa-file-alt text-lg leading-lg mr-2"></i>
+            Blog</a>
+        </li>
+      </ul>
+      {% endcomment %}
+      <ul class="flex flex-col lg:flex-row list-none lg:ml-auto">
+        <li class="flex items-center">
+          <a class="text-white px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold hover:text-blue"
+            href="https://instagram.com/abitaresmart">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="lucide lucide-instagram-icon lucide-instagram hover:text-[#E1306C] transition ease-in-out">
+              <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+              <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+            </svg>
+            <span class="lg:hidden inline-block ml-2">Instagram</span>
+          </a>
+        </li>
+        <li class="flex items-center">
+          <a class="text-white px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
+            href="https://x.com/abitaresmart">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="lucide lucide-twitter-icon lucide-twitter hover:text-[#1D9BF0] transition ease-in-out">
+              <path
+                d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
+            </svg>
+            <span class="lg:hidden inline-block ml-2 hover:text-blue">Twitter</span>
+          </a>
+        </li>
+        <li class="flex items-center">
+          <button
+            class="bg-sub-400 text-white active:bg-sub-600 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-lg outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3"
+            type="button" style="transition: all 0.15s ease 0s;" x-data="{
+      user: 'info',
+      domain: 'abitaresmart.com',
+      get email() {
+        return this.user + '@' + this.domain;
+      }
+    }" x-on:click="window.location.href = 'mailto:' + email + '?subject=Richiesta%20informazioni%20da%20sito%20web'">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="lucide lucide-circle-chevron-right-icon lucide-circle-chevron-right inline">
+              <circle cx="12" cy="12" r="10" />
+              <path d="m10 8 4 4-4 4" />
+            </svg>
+            Richiedi Informazioni
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

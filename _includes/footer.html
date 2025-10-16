@@ -1,0 +1,72 @@
+<div class="container mx-auto px-4-DIS">
+  <footer class="text-gray-400 bg-main-800 body-font">
+    <div
+      class="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
+      <div class="w-80 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
+        <a class="flex title-font font-medium items-center md:justify-start justify-center text-white">
+          <img class="w-12 h-12" src="/assets/img/AbitareSmart-Logo.png" alt="AbitareSmart Logo" />
+          <span class="ml-3 text-2xl font-logo">AbitareSmart</span>
+        </a>
+        <p class="mt-2 text-sm text-white">Ogni casa può diventare smart: noi ti aiutiamo a farlo con semplicità,
+          sicurezza e attenzione ai tuoi bisogni reali.</p>
+      </div>
+      <div class="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center">
+        <div class="ml-auto lg:w-1/4 md:w-1/2 w-full px-4">
+          <h2 class="title-font font-medium text-sub-400 tracking-widest text-sm mb-3">Link Utili</h2>
+          <nav class="list-none mb-10">
+            <li>
+              <a class="text-gray-400 hover:text-white" href="https://instagram.com/abitaresmart">Instagram</a>
+            </li>
+            <li>
+              <a class="text-gray-400 hover:text-white" href="https://x.com/abitaresmart">X</a>
+            </li>
+          </nav>
+        </div>
+        <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+          <h2 class="title-font font-medium text-sub-400 tracking-widest text-sm mb-3">Altre Risorse</h2>
+          <nav class="list-none mb-10">
+            <li>
+              <a class="text-gray-400 hover:text-white" x-data="{
+      user: 'info',
+      domain: 'abitaresmart.com',
+      get email() {
+        return this.user + '@' + this.domain;
+      }
+    }" x-on:click="window.location.href = 'mailto:' + email + '?subject=Richiesta%20informazioni%20da%20sito%20web'"
+                href="#">Contattaci</a>
+            </li>
+          </nav>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-main-900 bg-opacity-75">
+      <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
+        <p class="text-gray-400 text-sm text-center sm:text-left">© {{ site.time | date: '%Y' }} AbitareSmart
+          &nbsp;
+          •
+          &nbsp;
+          Theme
+          &nbsp;
+          <a class="hover:text-accent-400 font-semibold" href="https://github.com/abhinavs/cookie" target="_blank"
+            rel="noreferrer">Cookie</a>
+          &nbsp;
+          •
+          Icons
+          &nbsp;
+          <a class="hover:text-accent-400 font-semibold" href="https://lucide.dev" target="_blank"
+            rel="noreferrer">Lucide.dev</a>
+
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  {%- if site.soopr -%}
+  {%- if site.soopr.publish_token and jekyll.environment == "production" -%}
+  <script async='' data-soopr-token="{{site.soopr.publish_token}}" defer='defer' src="https://sdk.soopr.co/soopr.js">
+  </script>
+  {%- else -%}
+  <script async defer src="https://sdk.soopr.co/soopr.js"></script>
+  {%- endif -%}
+  {%- endif -%}

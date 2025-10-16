@@ -1,0 +1,49 @@
+title: AbitareSmart
+description: > # this means to ignore newlines until "show_excerpts:"
+  Ogni casa può diventare smart: noi ti aiutiamo a farlo con semplicità, sicurezza e attenzione ai tuoi bisogni reali.
+baseurl: "/"
+url: https://abitaresmart.com # change this URL, this is needed for generating right sitemap
+
+permalink: "/blog/:title/"
+
+plugins:
+  - jekyll-feed
+  - jekyll-soopr-seo-tag
+  - jekyll-sitemap
+  - jekyll-minifier
+
+css_dir: "assets/css" # defaults to "css"
+
+highlighter: rouge
+
+collections:
+  posts:
+    output: true
+    permalink: "/blog/:title"
+  pages:
+    output: true
+    permalink: "/:title"
+
+jekyll-minifier:
+  uglifier_args:
+    harmony: true
+
+# soopr:
+#  publish_token: "" # sign up at https://www.soopr.co to get your publish token and personalize share and reaction options
+
+
+twitter:
+  card: summary_large_image
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - package.json
+  - package-lock.json
+  - README.md
+  - postcss.config.js
+  - purgecss.config.js
+  - tailwind.config.js
+  - .gitignore
+  - vendor
