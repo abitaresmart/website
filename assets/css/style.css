@@ -1457,6 +1457,9 @@ video {
   }.md\:py-28 {
     padding-top: 7rem;
     padding-bottom: 7rem;
+  }.md\:py-12 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
   }.md\:px-0 {
     padding-left: 0px;
     padding-right: 0px;
