@@ -12,10 +12,10 @@ layout: home
         <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
       </h2>
       <div class="content flex py-2">
-          <img class="w-48 h-48" src="/assets/img/blog/{{post.image}}" alt="">
-          <div class="item-body px-2 ">
+        <img class="w-48" src="/assets/img/blog/{{post.image}}" alt="">
+        <div class="item-body px-2 ">
           {{ post.excerpt }}
-          </div>
+        </div>
       </div>
       <div class="mt-6 post-content">{{ post.excerpt }}</div>
       <div class="mt-10">
