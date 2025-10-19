@@ -1454,12 +1454,12 @@ video {
     margin-bottom: calc(0px * var(--tw-space-y-reverse));
   }.md\:p-4 {
     padding: 1rem;
-  }.md\:py-28 {
-    padding-top: 7rem;
-    padding-bottom: 7rem;
   }.md\:py-12 {
     padding-top: 3rem;
     padding-bottom: 3rem;
+  }.md\:py-28 {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
   }.md\:px-0 {
     padding-left: 0px;
     padding-right: 0px;
