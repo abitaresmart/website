@@ -11,12 +11,13 @@ layout: home
       <h2 class="mt-1 text-2xl tracking-tight font-extrabold text-gray-900 sm:leading-none md:text-3xl">
         <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
       </h2>
-      <div class="content clearfix py-2">
+      <div class="content py-2">
         <img class="float-left w-48 md:w-64 rounded-lg self-start mr-4 mb-2" src="/assets/img/blog/thumb/{{post.image}}"
           alt="">
         <div class="post-content px-2">
           {{ post.excerpt }}
         </div>
+      <div class="clear-both"></div>
       </div>
       <div class="mt-10">
         <a class="bg-main-400 hover:bg-main-700 text-white font-bold py-2 px-4 rounded-full"
