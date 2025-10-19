@@ -2,6 +2,7 @@
 layout: post
 title: "Guida introduttiva ad Apple Homekit"
 excerpt: "Una guida completa per iniziare a utilizzare Apple HomeKit e l’app Apple Casa. Dalla configurazione alle scene e all’automazione domestica."
+author: AbitareSmart
 image: 1-homekit.png
 ---
 
