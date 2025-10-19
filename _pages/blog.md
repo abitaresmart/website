@@ -13,7 +13,7 @@ layout: home
       </h2>
       <div class="content flex py-2">
         <img class="w-48 md:w-64 rounded-lg self-start" src="/assets/img/blog/thumb/{{post.image}}" alt="">
-        <div class="mt-6 post-content px-2 md:px-8">
+        <div class="post-content px-2">
           {{ post.excerpt }}
         </div>
       </div>
