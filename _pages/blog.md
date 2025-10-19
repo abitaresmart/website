@@ -13,8 +13,7 @@ layout: home
       </h2>
       <div class="mt-6 post-content">{{ post.excerpt }}</div>
       <div class="mt-10">
-        <a class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" href="{{ post.url | relative_url }}">Leggi di più</a>
-          Button
+        <a class="bg-main-400 hover:bg-main-700 text-white font-bold py-2 px-4 rounded-full" href="{{ post.url | relative_url }}">Leggi di più
         </a>
       </div>
     </li>
