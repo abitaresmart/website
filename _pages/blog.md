@@ -19,7 +19,7 @@ layout: home
         </div>
       <div class="clear-both"></div>
       </div>
-      <div class="mt-10">
+      <div class="mt-2">
         <a class="bg-main-400 hover:bg-main-700 text-white font-bold py-2 px-4 rounded-full"
           href="{{ post.url | relative_url }}">Leggi di più
         </a>
