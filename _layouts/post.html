@@ -14,7 +14,7 @@ layout: default
         {{ page.title | escape }}</h1>
     </div>
     <section class="hero container max-w-screen-lg mx-auto pb-10">
-      <img class="mx-auto" src="/assets/img/blog/{{ post.image }}" alt="{{ post.title }}">
+      <img class="mx-auto" src="/assets/img/blog/{{ page.image }}" alt="{{ page.title }}">
     </section>
     <p class="max-w-prose mx-auto mb-2 text-lg uppercase text-gray-500"><span class="font-bold tracking-wide">
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
