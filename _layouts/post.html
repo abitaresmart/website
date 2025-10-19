@@ -12,6 +12,7 @@ layout: default
         itemprop="name headline">
         {{ page.title | escape }}</h1>
     </div>
+    {% include image.html url="/assets/img/blog/{{ page.image }}" description="{{ page.title }}" %}
     <p class="max-w-prose mx-auto mb-2 text-lg uppercase text-gray-500"><span class="font-bold tracking-wide">
       {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
       <time class="dt-published text-xs" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
