@@ -1185,6 +1185,9 @@ video {
 }.py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
+}.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
 }.pl-4 {
   padding-left: 1rem;
 }.pb-4 {
