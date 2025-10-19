@@ -13,7 +13,7 @@ layout: home
       </h2>
       <div class="mt-6 post-content">{{ post.excerpt }}</div>
       <div class="mt-10">
-        <a class="text-blue-500 uppercase text-sm tracking-wide font-black content-link" href="{{ post.url | relative_url }}">Read More</a>
+        <a class="text-blue-500 uppercase text-sm tracking-wide font-black content-link" href="{{ post.url | relative_url }}">Leggi di più</a>
       </div>
     </li>
     <hr class="w-full bg-gray-100 my-12" style="height: 1px;">
