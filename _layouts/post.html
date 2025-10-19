@@ -13,9 +13,6 @@ layout: default
         itemprop="name headline">
         {{ page.title | escape }}</h1>
     </div>
-    <section class="hero container max-w-screen-lg mx-auto pb-10">
-      <img class="mx-auto" src="/assets/img/blog/{{ page.image }}" alt="{{ page.title }}">
-    </section>
     <p class="max-w-prose mx-auto mb-2 text-lg uppercase text-gray-500"><span class="font-bold tracking-wide">
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
         <time class="dt-published text-xs" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
@@ -40,6 +37,7 @@ layout: default
       Please sign up at https://www.soopr.co to personalize share and reaction buttons
     -->
     <div class="max-w-prose text-lg mx-auto mt-4 mb-8 soopr-btn soopr-btn-def" style="min-height: 36px;"></div>
+    <img class="mx-auto object-cover" src="/assets/img/blog/{{ page.image }}" alt="{{ page.title }}">
   </header>
 
   <div class="prose prose-lg px-4 md:px-0 text-gray-700 mx-auto" itemprop="articleBody">
