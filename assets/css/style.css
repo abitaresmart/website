@@ -901,6 +901,8 @@ video {
   position: relative;
 }.float-left {
   float: left;
+}.clear-both {
+  clear: both;
 }.-m-4 {
   margin: -1rem;
 }.mx-auto {
