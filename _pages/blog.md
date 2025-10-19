@@ -12,7 +12,7 @@ layout: home
         <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
       </h2>
       <div class="content py-2">
-        <img class="float-left w-48 md:w-64 rounded-lg self-start" src="/assets/img/blog/thumb/{{post.image}}" alt="">
+        <img class="float-left w-48 md:w-64 rounded-lg self-start mr-4 mb-2" src="/assets/img/blog/thumb/{{post.image}}" alt="">
         <div class="post-content px-2">
           {{ post.excerpt }}
         </div>
