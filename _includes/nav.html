@@ -1,13 +1,13 @@
-<nav
-  class="w-full flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg bg-main-400"
+<nav class="w-full flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg bg-main-400"
   x-data="{ open: false }">
   <div class="container px-4 mx-auto flex flex-wrap items-center justify-between">
     <div class="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
       <!--<a class=" flex-row leading-relaxed inline-block mr-4 py-2 whitespace-nowrap "-->
-      <a class="flex title-font font-medium items-center md:justify-start justify-center text-white hover:text-accent-400" href="/">
+      <a class="flex title-font font-medium items-center md:justify-start justify-center text-white hover:text-accent-400"
+        href="/">
         <img class="w-12 h-12 rounded-lg" src="/assets/img/icon.png" alt="AbitareSmart" />
         <span class="ml-3 text-2xl font-logo">AbitareSmart</span>
-        </a>
+      </a>
       <button
         class="cursor-pointer text-white text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
         @click="open = !open" type="button">
@@ -32,6 +32,20 @@
       </ul>
       {% endcomment %}
       <ul class="flex flex-col lg:flex-row list-none lg:ml-auto">
+        <li class="flex items-center">
+          <a class="text-white px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold hover:text-blue"
+            href="/blog">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="lucide lucide-newspaper-icon lucide-newspaper">
+              <path d="M15 18h-5" />
+              <path d="M18 14h-8" />
+              <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2" />
+              <rect width="8" height="4" x="10" y="6" rx="1" />
+            </svg>
+            <span class="lg:hidden inline-block ml-2">Blog</span>
+          </a>
+        </li>
         <li class="flex items-center">
           <a class="text-white px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold hover:text-blue"
             href="https://instagram.com/abitaresmart">
