@@ -34,11 +34,11 @@ layout: default
         {%- endif -%}
       </span>
     </p>
-    {% include share-buttons.html %}
     <div class="max-w-prose mx-auto mb-4">
       <img class="mx-auto object-cover" src="/assets/img/blog/{{ page.image }}" alt="{{ page.title }}">
     </div>
   </header>
+  {% include share-buttons.html %}
 
   <div class="prose prose-lg px-4 md:px-0 text-gray-700 mx-auto" itemprop="articleBody">
     {{ content }}
