@@ -6,7 +6,7 @@
 
 <div class="prose prose-lg mx-auto text-main-200">
     <ul class="px-0 flex flex-row list-none">
-        <li class="flex items-center">
+        <li class="px-0 flex items-center">
             <span class="inline-block">Share on:</span>
         </li>
         <li class="flex items-center">
@@ -51,7 +51,7 @@
             </a>
         </li>
         <li class="flex items-center">
-            <a href="navigator.clipboard.writeText({{ site.url }}{{ pageurl }})">
+            <a href=javascript:navigator.clipboard.writeText({{ site.url }}{{ pageurl }})">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                     class="lucide lucide-link-icon lucide-link hover:text-main-400 transition ease-in-out">
