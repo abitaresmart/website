@@ -9,7 +9,7 @@ Una guida completa per iniziare a utilizzare Apple HomeKit e l’app Apple Casa.
 
 ## App Casa di Apple
 
-Iniziare con [Apple HomeKit](https://support.apple.com/it-it/guide/home/welcome/) potrebbe sembrare inizialmente un compito complesso, ma in realtà offre un’esperienza semplice e intuitiva. Configurare per la prima volta [Apple Casa](https://support.apple.com/it-it/guide/home/welcome/) è un processo immediato che consente un’integrazione fluida con i tuoi dispositivi smart.
+Iniziare con [Apple HomeKit](https://support.apple.com/it-it/guide/home/welcome/) potrebbe sembrare inizialmente un compito complesso, ma in realtà offre un’esperienza semplice e intuitiva. Configurare per la prima volta [Apple Casa](https://www.apple.com/it/home-app/) è un processo immediato che consente un’integrazione fluida con i tuoi dispositivi smart.
 
 L’app Casa funge da centro di controllo intuitivo, permettendo di gestire in modo centralizzato tutta la tua tecnologia domestica intelligente da un’unica piattaforma coerente.
 
@@ -48,7 +48,7 @@ Un termostato smart aiuta a regolare la temperatura e migliorare l’efficienza 
 
 #### Accessori HomeKit aggiuntivi
 
-Inoltre, apriporta per garage, tende, ventilatori, umidificatori e sistemi di irrigazione automatizzati possono essere integrati nell’app Casa per un’automazione completa. Il supporto a HomeKit, [Matter](https://buildwithmatter.com/) e [Thread](https://csa-iot.org/all-solutions/thread/) garantisce compatibilità con un numero crescente di accessori intelligenti.
+Inoltre, apriporta per garage, tende, ventilatori, umidificatori e sistemi di irrigazione automatizzati possono essere integrati nell’app Casa per un’automazione completa. Il supporto a HomeKit, [Matter](https://buildwithmatter.com/) e [Thread](https://openthread.io) garantisce compatibilità con un numero crescente di accessori intelligenti.
 
 Se sei alle prime armi, la buona notizia è che alcuni prodotti Apple HomeKit si collegano tramite il proprio hub o bridge. Aggiungendo, ad esempio, il Philips Hue Bridge potrai integrare tutte le luci e i sensori Philips Hue. Il sistema Hue Lights è altamente consigliato per iniziare.
 
@@ -102,17 +102,16 @@ Per chi desidera funzioni di registrazione dati, è possibile affiancare Home As
 - [TP Link Tapo P110M Plug](https://www.tp-link.com/it/home-networking/smart-plug/tapo-p110m/)  
 - [Tapo Matter Power Strip](https://uk.store.tapo.com/products/tapo-wi-fi-power-strip-energy-monitoring-matter)  
 - [Starter Kit Philips Hue](https://www.philips-hue.com/it-it/products/smart-light-starter-kits)  
-- [Sensore di movimento Philips Hue](https://www.philips-hue.com/it-it/accessori/sensori-di-movimento)  
+- [Sensore di movimento Philips Hue](https://www.philips-hue.com/it-it/p/hue-hue-motion-sensor/8719514342125)  
 - [Sensore porta e finestra Aqara P2 Matter](https://www.aqara.com/eu/product/door-and-window-sensor-p2/)  
 - [Eve Aqua per il controllo del rubinetto](https://www.evehome.com/en/eve-aqua)
 
 #### Differenza tra Apple Home e Apple HomeKit
 
 [Apple Home](https://www.apple.com/it/home-app/) e [Apple HomeKit](https://developer.apple.com/homekit/) sono collegati ma non identici. Apple Home è l’applicazione che consente di gestire i dispositivi smart su iPhone, iPad, Mac e Apple Watch, mentre Apple HomeKit è il framework tecnologico che rende tutto ciò possibile, garantendo sicurezza, privacy e integrazione con Siri e iCloud.  
-Scopri di più su [privacy e sicurezza in Apple Home](https://www.apple.com/it/home-app/privacy/).
+Scopri di più su [privacy e sicurezza in Apple Home](https://support.apple.com/it-it/guide/security/sec3a881ccb1/web).
 
 Affidati a noi per creare e configurare la tua casa intelligente su misura: contattaci oggi stesso e scopri come trasformare la tua abitazione in un ambiente davvero smart!
-
 
 ---
 
@@ -124,17 +123,17 @@ Affidati a noi per creare e configurare la tua casa intelligente su misura: cont
 - [Apple HomeKit – Pagina sviluppatori](https://developer.apple.com/homekit/)  
 - [Apple TV](https://www.apple.com/it/apple-tv/)  
 - [HomePod](https://www.apple.com/it/homepod/)  
-- [Privacy e sicurezza in Apple Home](https://www.apple.com/it/home-app/privacy/)  
+- [Privacy e sicurezza in Apple Home](https://support.apple.com/it-it/guide/security/sec3a881ccb1/web)  
 - [Accessori compatibili con Apple HomeKit](https://www.apple.com/it/shop/accessories/all/homekit)
 
 ### 🌐 Standard di connettività
 - [Matter – buildwithmatter.com](https://buildwithmatter.com/)  
-- [Thread – Connectivity Standards Alliance](https://csa-iot.org/all-solutions/thread/)
+- [Thread – Connectivity Standards Alliance](https://openthread.io)
 
 ### 🏷️ Prodotti consigliati
 - [TP Link Tapo P110M Plug](https://www.tp-link.com/it/home-networking/smart-plug/tapo-p110m/)  
 - [Tapo Matter Power Strip](https://uk.store.tapo.com/products/tapo-wi-fi-power-strip-energy-monitoring-matter)  
 - [Philips Hue Starter Kit](https://www.philips-hue.com/it-it/products/smart-light-starter-kits)  
-- [Sensore di movimento Philips Hue](https://www.philips-hue.com/it-it/accessori/sensori-di-movimento)  
+- [Sensore di movimento Philips Hue](https://www.philips-hue.com/it-it/p/hue-hue-motion-sensor/8719514342125)  
 - [Aqara P2 Matter Sensor](https://www.aqara.com/eu/product/door-and-window-sensor-p2/)  
 - [Eve Aqua](https://www.evehome.com/en/eve-aqua)
