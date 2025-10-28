@@ -111,17 +111,13 @@ Per chi desidera funzioni di registrazione dati, è possibile affiancare Home As
 
 #### Accessori consigliati per Apple HomeKit
 
-- TP Link Tapo P110M Plug
+- [TP Link Tapo P110M Plug](https://www.tp-link.com/it/home-networking/smart-plug/tapo-p110m/)
+- [Tapo Matter Power Strip](https://uk.store.tapo.com/products/tapo-wi-fi-power-strip-energy-monitoring-matter)
+- [Starter Kit Philips Hue](https://www.philips-hue.com/it-it/products/smart-light-starter-kits)
+- [Sensore di movimento Philips Hue](https://www.philips-hue.com/it-it/accessori/sensori-di-movimento)
+- [Sensore porta e finestra Aqara P2 Matter](https://www.aqara.com/eu/product/door-and-window-sensor-p2/)
+- [Eve Aqua per il controllo del rubinetto](https://www.evehome.com/en/eve-aqua)
 
-- Tapo Matter Power Strip
-
-- Kit di avvio Philips Hue
-
-- Sensore di movimento Philips Hue
-
-- Sensore porta e finestra Aqara P2 Matter
-
-- Eve Aqua per il controllo del rubinetto
 
 #### Differenza tra Apple Home e Apple HomeKit
 
