@@ -49,7 +49,6 @@ exclude:
   - assets/img/shape.svg
   - assets/img/logo.png
   - assets/img/AbitareSmart-Logo.png
-  - assets/img/icon.png
   - assets/img/blog/thumb
   - .gitignore
   - vendor
