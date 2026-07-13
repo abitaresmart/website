@@ -1,10 +1,10 @@
 # AbitareSmart Design Guidelines
 
-Version: Lumen 1.0
+Version: Signal 1.0
 
 Applies to: `redesign-original-brand`
 
-Primary implementation: `assets/css/abitaresmart-lumen.css`
+Primary implementation: `assets/css/abitaresmart-signal.css`
 
 ## 1. Brand direction
 
@@ -13,51 +13,56 @@ AbitareSmart should feel calm, intelligent, architectural, and human. The identi
 The system follows five principles:
 
 1. **Clarity before decoration.** Every element should communicate purpose quickly.
-2. **Quiet confidence.** Use strong hierarchy, generous space, and restrained color.
+2. **Confident energy.** Use strong hierarchy, generous space, and vivid color with discipline.
 3. **Technology made human.** Technical details may appear, but the experience should never feel clinical.
 4. **One coherent system.** The website, logo, interface states, imagery, and localized pages use the same visual language.
 5. **Accessible by default.** Contrast, focus states, motion preferences, and semantic HTML are design requirements.
 
 ## 2. Color system
 
-The Lumen palette replaces the previous teal and orange identity. It is built from midnight navy, cobalt, iris, porcelain, and cool neutral surfaces.
+The Signal palette restores the original neon character of the redesign: botanical ink and warm paper provide a grounded base, while electric lime, mint, coral, and sky communicate intelligent energy. Saturated colors are accents, not page backgrounds.
 
 ### Core palette
 
 | Family | Token | Hex | Role |
 | --- | --- | --- | --- |
-| Midnight | Ink | `#12192B` | Primary text, dark sections, footer, dark buttons |
-| Midnight | Ink soft | `#1D2842` | Secondary dark text and elevated dark surfaces |
-| Porcelain | Canvas | `#F7F7F2` | Page background and warm negative space |
-| Neutral | Surface | `#E9ECF4` | Alternate sections, panels, inactive surfaces |
-| Neutral | White | `#FFFFFF` | Cards, overlays, and text on primary color |
-| Cobalt | Primary | `#4265E8` | Primary actions, active states, connectivity |
-| Cobalt | Primary hover | `#304FC7` | Hover and pressed states |
-| Cobalt | Primary soft | `#AFC0FF` | Feature surfaces, diagrams, icon backgrounds |
-| Cobalt | Primary pale | `#DDE4FF` | Subtle status and informational surfaces |
-| Iris | Secondary | `#8B78E6` | Supporting graphic details only |
-| Iris | Secondary soft | `#D9D1FA` | Secondary surfaces and secure states |
-| Iris | Accent | `#6654C7` | Highlighted words, links, focus, brand emphasis |
-| Slate | Muted text | `#657086` | Secondary copy and metadata |
+| Botanical | Ink | `#0B211F` | Primary text, dark sections, footer, dark buttons |
+| Botanical | Ink soft | `#17302D` | Secondary dark text and elevated dark surfaces |
+| Warm neutral | Canvas | `#F7F4EC` | Page background and editorial negative space |
+| Warm neutral | Surface | `#EFEADF` | Alternate sections, panels, inactive surfaces |
+| Warm neutral | White | `#FFFDF8` | Cards, overlays, and inverse copy |
+| Electric | Primary | `#DDF86A` | Primary actions, energy cards, active diagrams |
+| Electric | Primary hover | `#EBFF98` | Hover and pressed states |
+| Mint | Primary pale | `#D8F7E8` | Informational and connected surfaces |
+| Mint | Secondary soft | `#AEECCF` | Supporting feature surfaces and dark-button hover |
+| Sky | Secondary | `#76C7F2` | Restrained supporting graphic details |
+| Coral | Accent | `#FF735C` | Large highlights, nodes, and graphic emphasis |
+| Coral | Accent strong | `#B93A31` | Accessible small accent text and focus rings |
+| Slate | Muted text | `#66736F` | Secondary copy and metadata |
+| Positive | Status | `#38A36D` | Connected state only, never decorative |
+| Positive | Status strong | `#2E7D59` | Connected labels and check icons |
 
 ### Semantic CSS tokens
 
 ```css
 :root {
-  --color-ink: #12192b;
-  --color-ink-soft: #1d2842;
-  --color-canvas: #f7f7f2;
-  --color-surface: #e9ecf4;
-  --color-white: #ffffff;
-  --color-primary: #4265e8;
-  --color-primary-hover: #304fc7;
-  --color-primary-soft: #afc0ff;
-  --color-primary-pale: #dde4ff;
-  --color-secondary: #8b78e6;
-  --color-secondary-soft: #d9d1fa;
-  --color-accent: #6654c7;
-  --color-text-muted: #657086;
-  --color-line: rgba(18, 25, 43, 0.14);
+  --color-ink: #0b211f;
+  --color-ink-soft: #17302d;
+  --color-canvas: #f7f4ec;
+  --color-surface: #efeadf;
+  --color-white: #fffdf8;
+  --color-primary: #ddf86a;
+  --color-primary-hover: #ebff98;
+  --color-primary-soft: #ddf86a;
+  --color-primary-pale: #d8f7e8;
+  --color-secondary: #76c7f2;
+  --color-secondary-soft: #aeeccf;
+  --color-accent: #ff735c;
+  --color-accent-strong: #b93a31;
+  --color-text-muted: #66736f;
+  --color-positive: #38a36d;
+  --color-positive-strong: #2e7d59;
+  --color-line: rgba(11, 33, 31, 0.14);
   --color-line-inverse: rgba(255, 255, 255, 0.16);
 }
 ```
@@ -66,34 +71,35 @@ The Lumen palette replaces the previous teal and orange identity. It is built fr
 
 - Use **Canvas + Ink** as the default page pairing.
 - Use **Ink + White/Canvas** for dark editorial sections.
-- Use **Primary + White** for the main call to action.
-- Use **Accent** for highlighted display text, links, and focus rings—not for large background areas.
-- Use **Primary soft** and **Secondary soft** for feature cards and diagrams.
+- Use **Primary + Ink** for the main call to action.
+- Use bright **Accent** for large display text and graphic nodes; use **Accent strong** for small text, links, and focus rings.
+- Use **Primary**, **Primary pale**, and **Secondary soft** for feature cards and diagrams.
 - Use no more than one saturated color as the focal point in a component.
-- Do not introduce teal, orange, red, or green as brand colors. Semantic error/success colors may be added only when the interface genuinely requires those states.
-- Do not use Primary soft, Primary pale, or Secondary soft for body text.
+- Coral and status green must never become general-purpose body-text colors.
+- Do not use Primary, Primary pale, Secondary, or Secondary soft for body text.
 
 ### Verified contrast pairs
 
 | Foreground | Background | Ratio | Use |
 | --- | --- | ---: | --- |
-| `#12192B` | `#F7F7F2` | 16.29:1 | Body and display text |
-| `#FFFFFF` | `#4265E8` | 4.93:1 | Primary buttons |
-| `#6654C7` | `#F7F7F2` | 5.34:1 | Accent text and links |
-| `#657086` | `#F7F7F2` | 4.64:1 | Muted body copy |
-| `#FFFFFF` | `#12192B` | 17.51:1 | Dark sections |
+| `#0B211F` | `#F7F4EC` | 15.27:1 | Body and display text |
+| `#0B211F` | `#DDF86A` | 14.15:1 | Primary buttons |
+| `#0B211F` | `#AEECCF` | 12.54:1 | Soft feature surfaces |
+| `#B93A31` | `#F7F4EC` | 5.15:1 | Small accent text and links |
+| `#66736F` | `#F7F4EC` | 4.50:1 | Muted body copy |
+| `#FFFDF8` | `#0B211F` | 16.51:1 | Dark sections |
 
 ## 3. Logo
 
 The AbitareSmart mark combines three signals:
 
 - the **house** communicates the physical home;
-- the **wireless arcs** communicate connected technology;
-- the **iris hub** communicates a central intelligent control point.
+- the **single broadcast arch** communicates connected technology without duplicating the roof;
+- the **coral or lime hub** communicates a central intelligent control point.
 
 ### Source assets
 
-- Primary raster mark: `assets/img/abitaresmart-lumen.png`
+- Primary raster mark: `assets/img/abitaresmart-signal-logo.png`
 - Compatibility/canonical icon: `assets/img/icon.png`
 
 Both files contain the same transparent-background mark. The primary asset is used by navigation, footer, favicon, touch icon, and structured organization metadata.
@@ -106,7 +112,8 @@ Both files contain the same transparent-background mark. The primary asset is us
 - Scale proportionally; never stretch, skew, rotate, crop, outline, or recolor the mark.
 - Do not add external drop shadows, badges, borders, or containers.
 - Do not place the mark over detailed photography.
-- Use the full-color mark on Canvas, White, Surface, or Ink backgrounds.
+- Use the mark directly on Canvas, White, Surface, or Primary pale backgrounds.
+- On Ink backgrounds, place the mark on the documented Canvas plate; do not recolor the house outline.
 - Keep the wordmark separate and editable as HTML text. Do not bake “AbitareSmart” into the image.
 
 ## 4. Typography
@@ -160,8 +167,8 @@ Use asymmetric editorial grids for energy, but maintain consistent alignment bet
 
 Depth should remain quiet:
 
-- Small shadow: `0 12px 35px rgba(18, 25, 43, 0.08)`.
-- Large shadow: `0 32px 90px rgba(18, 25, 43, 0.18)`.
+- Small shadow: `0 12px 35px rgba(11, 33, 31, 0.08)`.
+- Large shadow: `0 32px 90px rgba(11, 33, 31, 0.18)`.
 - Prefer borders and surface contrast over extra shadows.
 - Never stack multiple heavy shadows on one component.
 
@@ -169,7 +176,7 @@ Depth should remain quiet:
 
 ### Buttons
 
-- **Primary:** Primary background, White text, Primary hover background.
+- **Primary:** Electric-lime Primary background, Ink text, pale-lime hover background.
 - **Dark:** Ink background, Canvas text; may invert to Secondary soft on hover.
 - Minimum height: **44 px**; preferred primary height: **54 px**.
 - Buttons use pill geometry and a subtle `translateY(-2px)` hover response.
@@ -180,7 +187,7 @@ Depth should remain quiet:
 - Default cards use White on Canvas with a low-contrast Ink border.
 - Informational cards use Primary pale.
 - Secondary feature cards use Primary soft or Secondary soft.
-- Dark technical cards use Ink with White copy and soft cobalt details.
+- Dark technical cards use Ink with White copy and electric-lime details.
 - Avoid mixing Primary soft and Secondary soft inside the same small card.
 
 ### Navigation
@@ -192,16 +199,16 @@ Depth should remain quiet:
 
 ### Status and focus
 
-- Connected/active states use Primary and Primary pale.
-- Secure/supporting states use Secondary and Secondary soft.
-- Focus rings use a 3 px Accent outline with a 3 px offset.
+- Connected states use Positive, Positive strong, and Primary pale.
+- Energy/active diagrams use Primary; supporting feature states use Secondary soft.
+- Focus rings use a 3 px Accent strong outline with a 3 px offset.
 - Never communicate state through color alone; retain iconography or text.
 
 ## 8. Imagery and illustration
 
 - Favor calm, believable interiors with natural light and authentic materials.
 - UI mockups should use the same semantic palette as the website.
-- Avoid heavy blue or violet filters over photography.
+- Avoid heavy neon filters over photography; saturated color belongs to the interface layer.
 - Keep technical diagrams sparse, using Ink, Primary soft, and Accent as the center node.
 - Generated imagery must not include text, third-party logos, or imaginary product branding.
 

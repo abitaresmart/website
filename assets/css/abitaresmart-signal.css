@@ -1,26 +1,30 @@
 ---
 ---
 
-/* AbitareSmart Lumen design system — midnight, cobalt, iris, and porcelain. */
+/* AbitareSmart Signal design system — botanical ink with neon living accents. */
 
 :root {
-  --color-ink: #12192b;
-  --color-ink-soft: #1d2842;
-  --color-canvas: #f7f7f2;
-  --color-surface: #e9ecf4;
-  --color-white: #ffffff;
-  --color-primary: #4265e8;
-  --color-primary-hover: #304fc7;
-  --color-primary-soft: #afc0ff;
-  --color-primary-pale: #dde4ff;
-  --color-secondary: #8b78e6;
-  --color-secondary-soft: #d9d1fa;
-  --color-accent: #6654c7;
-  --color-text-muted: #657086;
-  --color-line: rgba(18, 25, 43, 0.14);
+  --color-ink: #0b211f;
+  --color-ink-soft: #17302d;
+  --color-canvas: #f7f4ec;
+  --color-surface: #efeadf;
+  --color-white: #fffdf8;
+  --color-primary: #ddf86a;
+  --color-primary-hover: #ebff98;
+  --color-primary-soft: #ddf86a;
+  --color-primary-pale: #d8f7e8;
+  --color-secondary: #76c7f2;
+  --color-secondary-soft: #aeeccf;
+  --color-accent: #ff735c;
+  --color-accent-strong: #b93a31;
+  --color-text-muted: #66736f;
+  --color-positive: #38a36d;
+  --color-positive-strong: #2e7d59;
+  --color-energy-pale: #f1f7da;
+  --color-line: rgba(11, 33, 31, 0.14);
   --color-line-inverse: rgba(255, 255, 255, 0.16);
-  --shadow-sm: 0 12px 35px rgba(18, 25, 43, 0.08);
-  --shadow-lg: 0 32px 90px rgba(18, 25, 43, 0.18);
+  --shadow-sm: 0 12px 35px rgba(11, 33, 31, 0.08);
+  --shadow-lg: 0 32px 90px rgba(11, 33, 31, 0.18);
   --radius-sm: 14px;
   --radius: 24px;
   --radius-lg: 38px;
@@ -88,12 +92,12 @@ svg.icon {
 }
 
 ::selection {
-  color: var(--color-white);
+  color: var(--color-ink);
   background: var(--color-primary);
 }
 
 :focus-visible {
-  outline: 3px solid var(--color-accent);
+  outline: 3px solid var(--color-accent-strong);
   outline-offset: 3px;
 }
 
@@ -204,7 +208,7 @@ h3 {
 }
 
 .button-primary {
-  color: var(--color-white);
+  color: var(--color-ink);
   background: var(--color-primary);
 }
 
@@ -245,7 +249,7 @@ h3 {
 
 .text-link:hover,
 .card-link:hover {
-  color: var(--color-accent);
+  color: var(--color-accent-strong);
 }
 
 /* Header */
@@ -256,14 +260,14 @@ h3 {
   top: 0;
   width: 100%;
   border-bottom: 1px solid transparent;
-  background: rgba(247, 247, 242, 0.92);
+  background: rgba(247, 244, 236, 0.9);
   backdrop-filter: blur(18px);
   transition: border-color 180ms ease, box-shadow 180ms ease;
 }
 
 .site-header.is-scrolled {
   border-color: var(--color-line);
-  box-shadow: 0 8px 30px rgba(18, 25, 43, 0.05);
+  box-shadow: 0 8px 30px rgba(11, 33, 31, 0.05);
 }
 
 .nav-shell {
@@ -291,7 +295,7 @@ h3 {
 }
 
 .brand > span > span {
-  color: var(--color-accent);
+  color: var(--color-accent-strong);
 }
 
 .nav-links {
@@ -312,9 +316,12 @@ h3 {
   transition: color 160ms ease;
 }
 
-.nav-links > a:hover,
+.nav-links > a:hover {
+  color: var(--color-accent-strong);
+}
+
 .footer-column a:hover {
-  color: var(--color-accent);
+  color: var(--color-primary-soft);
 }
 
 .nav-actions {
@@ -404,7 +411,7 @@ h3 {
 }
 
 .hero-note .icon {
-  color: var(--color-primary);
+  color: var(--color-positive-strong);
 }
 
 .hero-visual {
@@ -424,7 +431,7 @@ h3 {
 .hero-image-wrap::after {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, transparent 55%, rgba(18, 25, 43, 0.34));
+  background: linear-gradient(180deg, transparent 55%, rgba(11, 33, 31, 0.34));
   content: "";
   pointer-events: none;
 }
@@ -459,8 +466,8 @@ h3 {
   padding: 18px;
   border: 1px solid rgba(255, 255, 255, 0.58);
   border-radius: 26px;
-  background: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 24px 60px rgba(18, 25, 43, 0.25);
+  background: rgba(255, 253, 248, 0.9);
+  box-shadow: 0 24px 60px rgba(11, 33, 31, 0.25);
   backdrop-filter: blur(20px);
 }
 
@@ -494,7 +501,7 @@ h3 {
   gap: 6px;
   padding: 6px 9px;
   border-radius: 999px;
-  color: var(--color-primary-hover);
+  color: var(--color-positive-strong);
   background: var(--color-primary-pale);
   font-size: 0.55rem;
   font-weight: 700;
@@ -504,8 +511,8 @@ h3 {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--color-primary);
-  box-shadow: 0 0 0 4px rgba(66, 101, 232, 0.14);
+  background: var(--color-positive);
+  box-shadow: 0 0 0 4px rgba(56, 163, 109, 0.14);
 }
 
 .scene-card {
@@ -544,7 +551,7 @@ h3 {
   padding: 2px;
   border: 0;
   border-radius: 999px;
-  background: var(--color-primary-soft);
+  background: var(--color-secondary-soft);
   transition: background 180ms ease;
 }
 
@@ -554,7 +561,7 @@ h3 {
   height: 18px;
   border-radius: 50%;
   background: white;
-  box-shadow: 0 2px 4px rgba(18, 25, 43, 0.2);
+  box-shadow: 0 2px 4px rgba(11, 33, 31, 0.2);
   transition: transform 180ms ease;
 }
 
@@ -595,7 +602,7 @@ h3 {
 }
 
 .room-stat.is-secure {
-  background: var(--color-secondary-soft);
+  background: var(--color-energy-pale);
 }
 
 .room-stat .icon {
@@ -613,7 +620,7 @@ h3 {
 
 .hero-orbit {
   position: absolute;
-  border: 1px solid rgba(18, 25, 43, 0.08);
+  border: 1px solid rgba(11, 33, 31, 0.08);
   border-radius: 50%;
 }
 
@@ -670,7 +677,7 @@ h3 {
 }
 
 .proof-list .icon {
-  color: var(--color-primary);
+  color: var(--color-positive-strong);
 }
 
 /* Shared headings */
@@ -706,8 +713,8 @@ h3 {
 
 .why-section {
   background:
-    linear-gradient(rgba(18, 25, 43, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(18, 25, 43, 0.035) 1px, transparent 1px),
+    linear-gradient(rgba(11, 33, 31, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(11, 33, 31, 0.035) 1px, transparent 1px),
     var(--color-canvas);
   background-size: 72px 72px;
 }
@@ -791,7 +798,7 @@ h3 {
 
 .bento-copy .micro-label {
   margin-bottom: 12px;
-  color: var(--color-accent);
+  color: var(--color-accent-strong);
   font-family: var(--font-mono);
   font-size: 0.63rem;
   letter-spacing: 0.08em;
@@ -799,6 +806,10 @@ h3 {
 }
 
 .bento-energy .micro-label {
+  color: var(--color-accent-strong);
+}
+
+.bento-security .micro-label {
   color: var(--color-accent);
 }
 
@@ -825,7 +836,7 @@ h3 {
   right: -5%;
   width: 58%;
   aspect-ratio: 1;
-  border: 1px solid rgba(175, 192, 255, 0.18);
+  border: 1px solid rgba(221, 248, 106, 0.18);
   border-radius: 50%;
 }
 
@@ -833,7 +844,7 @@ h3 {
 .network-art::after {
   position: absolute;
   inset: 14%;
-  border: 1px solid rgba(175, 192, 255, 0.16);
+  border: 1px solid rgba(221, 248, 106, 0.16);
   border-radius: inherit;
   content: "";
 }
@@ -850,7 +861,7 @@ h3 {
   border: 3px solid var(--color-ink);
   border-radius: 50%;
   background: var(--color-primary-soft);
-  box-shadow: 0 0 0 1px rgba(175, 192, 255, 0.22);
+  box-shadow: 0 0 0 1px rgba(221, 248, 106, 0.22);
 }
 
 .network-art span {
@@ -878,7 +889,7 @@ h3 {
   position: absolute;
   inset: 0;
   opacity: 0.3;
-  background-image: radial-gradient(rgba(175, 192, 255, 0.2) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(221, 248, 106, 0.2) 1px, transparent 1px);
   background-size: 24px 24px;
   content: "";
   mask-image: linear-gradient(to bottom, black, transparent 70%);
@@ -1049,7 +1060,7 @@ h3 {
 
 .method-steps > li > span {
   padding-top: 7px;
-  color: var(--color-accent);
+  color: var(--color-accent-strong);
   font-family: var(--font-mono);
   font-size: 0.68rem;
 }
@@ -1160,7 +1171,7 @@ h3 {
 }
 
 .project-copy > span {
-  color: var(--color-accent);
+  color: var(--color-accent-strong);
   font-family: var(--font-mono);
   font-size: 0.64rem;
   letter-spacing: 0.07em;
@@ -1270,7 +1281,7 @@ h3 {
 }
 
 .journal-card h3 a:hover {
-  color: var(--color-accent);
+  color: var(--color-accent-strong);
 }
 
 .card-link {
@@ -1300,11 +1311,11 @@ h3 {
 }
 
 .faq-list {
-  border-top: 1px solid rgba(18, 25, 43, 0.25);
+  border-top: 1px solid rgba(11, 33, 31, 0.25);
 }
 
 .faq-list details {
-  border-bottom: 1px solid rgba(18, 25, 43, 0.25);
+  border-bottom: 1px solid rgba(11, 33, 31, 0.25);
 }
 
 .faq-list summary {
@@ -1331,7 +1342,7 @@ h3 {
   height: 38px;
   flex: none;
   place-items: center;
-  border: 1px solid rgba(18, 25, 43, 0.3);
+  border: 1px solid rgba(11, 33, 31, 0.3);
   border-radius: 50%;
   transition: color 180ms ease, background 180ms ease, transform 180ms ease;
 }
@@ -1458,6 +1469,14 @@ h3 {
   color: var(--color-canvas);
 }
 
+.brand-footer img {
+  width: 48px;
+  height: 48px;
+  padding: 4px;
+  border-radius: 14px;
+  background: var(--color-canvas);
+}
+
 .footer-brand > p {
   max-width: 360px;
   margin: 25px 0 30px;
@@ -1567,7 +1586,7 @@ h3 {
 }
 
 .prose a:hover {
-  color: var(--color-accent);
+  color: var(--color-accent-strong);
 }
 
 .prose blockquote {
@@ -1652,7 +1671,7 @@ h3 {
 }
 
 .post-category {
-  color: var(--color-accent);
+  color: var(--color-accent-strong);
   font-family: var(--font-mono);
   font-size: 0.68rem;
   letter-spacing: 0.08em;
