@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-labelledby="title">
-  <title id="title">AbitareSmart</title>
-  <rect width="48" height="48" rx="14" fill="#DDF86A"/>
-  <path d="M11.5 23.2 24 12l12.5 11.2v12.3a1.5 1.5 0 0 1-1.5 1.5H13a1.5 1.5 0 0 1-1.5-1.5V23.2Z" fill="none" stroke="#0B211F" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M18 30.5h5.2a4.8 4.8 0 0 0 4.8-4.8v-1.2" fill="none" stroke="#0B211F" stroke-width="2.7" stroke-linecap="round"/>
-  <circle cx="18" cy="30.5" r="2.2" fill="#FF735C" stroke="#0B211F" stroke-width="1.6"/>
-  <circle cx="28" cy="22.5" r="2.2" fill="#F7F4EC" stroke="#0B211F" stroke-width="1.6"/>
-</svg>

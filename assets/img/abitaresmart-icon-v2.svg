@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title description">
+  <title id="title">AbitareSmart</title>
+  <desc id="description">A connected home drawn as a bold architectural A, with a smart signal at its center.</desc>
+  <defs>
+    <linearGradient id="brand-surface" x1="18" y1="12" x2="112" y2="120" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#126981"/>
+      <stop offset="1" stop-color="#06252D"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="4" y="4" width="120" height="120" rx="30" fill="url(#brand-surface)"/>
+  <path d="M64 4h30c16.57 0 30 13.43 30 30v60c0 16.57-13.43 30-30 30H53L64 4Z" fill="#08313D" opacity=".26"/>
+
+  <path fill="#FAFAFA" fill-rule="evenodd" d="M64 17 13 62.2l12.6 14.2 7.5-6.7V101c0 5.52 4.48 10 10 10h41.8c5.52 0 10-4.48 10-10V69.7l7.5 6.7L115 62.2 64 17Zm0 23.7 19.3 17.1v39.7H44.7V57.8L64 40.7Z"/>
+
+  <path d="M48.5 66.2c8.57-8.58 22.43-8.58 31 0" fill="none" stroke="#6FAEC6" stroke-width="7.5" stroke-linecap="round"/>
+  <path d="M56.5 75.5c4.14-4.14 10.86-4.14 15 0" fill="none" stroke="#B0D2E0" stroke-width="7.5" stroke-linecap="round"/>
+  <circle cx="64" cy="87" r="6.5" fill="#FFA552"/>
+</svg>
