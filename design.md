@@ -1,6 +1,6 @@
 # AbitareSmart Design Guidelines
 
-Version: Signal 1.0
+Version: Signal 1.1
 
 Applies to: `redesign-original-brand`
 
@@ -91,30 +91,37 @@ The Signal palette restores the original neon character of the redesign: botanic
 
 ## 3. Logo
 
-The AbitareSmart mark combines three signals:
+The AbitareSmart **Signal Portal** is one compact smart-home symbol built from three locked elements:
 
-- the **house** communicates the physical home;
-- the **single broadcast arch** communicates connected technology without duplicating the roof;
-- the **coral or lime hub** communicates a central intelligent control point.
+- the continuous warm-white **architectural portal** makes the home unmistakable;
+- the single electric-lime **broadcast arch** communicates an active connected system without falling back to the generic three-wave Wi-Fi symbol;
+- the coral **source node** represents the intelligent hub at the centre of the home.
+
+The deliberately broad, low architecture feels stable and professional. The one-wave signal and node stay legible when the mark is reduced to a browser favicon or cropped into a circular social avatar. The dark Ink-soft tile is part of the logo, not an optional container.
 
 ### Source assets
 
-- Primary raster mark: `assets/img/abitaresmart-signal-logo.png`
-- Compatibility/canonical icon: `assets/img/icon.png`
+- Primary website mark: `assets/img/abitaresmart-portal-logo.png` — 1024 × 1024 PNG
+- Social avatar master: `assets/img/abitaresmart-social-avatar.png` — 2048 × 2048 PNG
+- Compatibility/canonical icon: `assets/img/icon.png` — 1024 × 1024 PNG
+- Reproducible rendering source: `tools/brand/render_logo.py`
 
-Both files contain the same transparent-background mark. The primary asset is used by navigation, footer, favicon, touch icon, and structured organization metadata.
+The website mark is used by navigation, footer, favicon, touch icon, and structured organization metadata. The 2048 px master is the upload-ready asset for Instagram, Facebook, LinkedIn, X, TikTok, YouTube, and other social profiles.
 
 ### Logo rules
 
-- Minimum digital size: **24 × 24 px**.
+- Minimum digital size: **24 × 24 px**; prefer **32 px or larger** when space allows.
 - Recommended navigation size: **42–48 px**.
-- Keep clear space equal to at least **12.5% of the mark width** on every side.
-- Scale proportionally; never stretch, skew, rotate, crop, outline, or recolor the mark.
-- Do not add external drop shadows, badges, borders, or containers.
-- Do not place the mark over detailed photography.
-- Use the mark directly on Canvas, White, Surface, or Primary pale backgrounds.
-- On Ink backgrounds, place the mark on the documented Canvas plate; do not recolor the house outline.
+- Keep external clear space equal to at least **12.5% of the tile width** on every side.
+- Scale proportionally; never stretch, skew, rotate, crop, outline, recolor, or remove the Ink-soft tile.
+- Do not add external shadows, gradients, badges, borders, or secondary containers.
+- Do not place the mark over detailed photography unless the full square tile remains intact.
+- For social profiles, upload the 2048 px master directly. Essential geometry is centred for both circular and rounded-square platform crops.
 - Keep the wordmark separate and editable as HTML text. Do not bake “AbitareSmart” into the image.
+
+### Construction and color
+
+The logo uses only four brand colors: Ink soft `#17302D` for the tile, White `#FFFDF8` for the portal, Primary `#DDF86A` for the signal, and Accent `#FF735C` for the node. No gradients, shading, transparency, texture, or off-palette effects are permitted. Antialiasing at geometric edges is the only color interpolation allowed.
 
 ## 4. Typography
 
