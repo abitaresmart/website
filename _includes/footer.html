@@ -1,75 +1,54 @@
-<div class="container mx-auto px-4-DIS">
-  <footer class="text-gray-400 bg-main-800 body-font">
-    <div
-      class="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
-      <div class="w-80 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
-        <a class="flex title-font font-medium items-center md:justify-start justify-center text-white">
-          <img class="w-12 h-12 rounded-lg" src="/assets/img/icon.png" alt="AbitareSmart" />
-          <span class="ml-3 text-2xl font-logo">AbitareSmart</span>
-        </a>
-        <p class="mt-2 text-sm text-white">Ogni casa può diventare smart: noi ti aiutiamo a farlo con semplicità,
-          sicurezza e attenzione ai tuoi bisogni reali.</p>
-      </div>
-      <div class="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center">
-        <div class="ml-auto lg:w-1/4 md:w-1/2 w-full px-4">
-          <h2 class="title-font font-medium text-sub-400 tracking-widest text-sm mb-3">Social</h2>
-          <nav class="list-none mb-10">
-            <li>
-              <a class="text-gray-400 hover:text-white" href="https://instagram.com/abitaresmart">Instagram</a>
-            </li>
-            <li>
-              <a class="text-gray-400 hover:text-white" href="https://x.com/abitaresmart">X</a>
-            </li>
-          </nav>
-        </div>
-        <div class="lg:w-1/4 md:w-1/2 w-full px-4">
-          <h2 class="title-font font-medium text-sub-400 tracking-widest text-sm mb-3">Altre Risorse</h2>
-          <nav class="list-none mb-10">
-            <li>
-              <a class="text-gray-400 hover:text-white" x-data="{
-      user: 'info',
-      domain: 'abitaresmart.com',
-      get email() {
-        return this.user + '@' + this.domain;
-      }
-    }" x-on:click="window.location.href = 'mailto:' + email + '?subject=Richiesta%20informazioni%20da%20sito%20web'"
-                href="#">Contattaci</a>
-            </li>
-            <li>
-              <a class="text-gray-400 hover:text-white" href="/blog">Blog</a>
-            </li>
-          </nav>
-        </div>
-      </div>
+{% assign lang = page.lang | default: site.lang | default: "it" %}
+{% assign t = site.data.i18n[lang] %}
+{% if lang == "en" %}
+  {% assign home_url = "/en/" %}
+  {% assign journal_url = "/en/journal/" %}
+  {% assign about_url = "/en/about/" %}
+  {% assign contact_url = "/en/contact/" %}
+  {% assign privacy_url = "/en/privacy/" %}
+  {% assign terms_url = "/en/terms/" %}
+{% else %}
+  {% assign home_url = "/" %}
+  {% assign journal_url = "/blog/" %}
+  {% assign about_url = "/chi-siamo/" %}
+  {% assign contact_url = "/contatti/" %}
+  {% assign privacy_url = "/privacy/" %}
+  {% assign terms_url = "/termini/" %}
+{% endif %}
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a class="brand brand-footer" href="{{ home_url }}">
+        <img src="/assets/img/brand-mark.svg" width="48" height="48" alt="">
+        <span>Abitare<span>Smart</span></span>
+      </a>
+      <p>{{ t.footer.claim }}</p>
+      <a class="social-link" href="https://instagram.com/abitaresmart" rel="me noreferrer" target="_blank">
+        <svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#icon-instagram"></use></svg>Instagram
+      </a>
     </div>
-
-    <div class="bg-main-900 bg-opacity-75">
-      <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
-        <p class="text-gray-400 text-sm text-center sm:text-left">© {{ site.time | date: '%Y' }} AbitareSmart
-          &nbsp;
-          •
-          &nbsp;
-          Theme
-          &nbsp;
-          <a class="hover:text-accent-400 font-semibold" href="https://github.com/abhinavs/cookie" target="_blank"
-            rel="noreferrer">Cookie</a>
-          &nbsp;
-          •
-          Icons
-          &nbsp;
-          <a class="hover:text-accent-400 font-semibold" href="https://lucide.dev" target="_blank"
-            rel="noreferrer">Lucide.dev</a>
-
-        </p>
-      </div>
+    <div class="footer-column">
+      <h2>{{ t.footer.explore }}</h2>
+      <a href="{{ home_url }}#solutions">{{ t.nav.services }}</a>
+      <a href="{{ home_url }}#method">{{ t.nav.method }}</a>
+      <a href="{{ home_url }}#projects">{{ t.nav.projects }}</a>
+      <a href="{{ journal_url }}">{{ t.nav.journal }}</a>
     </div>
-  </footer>
-
-  {%- if site.soopr -%}
-  {%- if site.soopr.publish_token and jekyll.environment == "production" -%}
-  <script async='' data-soopr-token="{{site.soopr.publish_token}}" defer='defer' src="https://sdk.soopr.co/soopr.js">
-  </script>
-  {%- else -%}
-  <script async defer src="https://sdk.soopr.co/soopr.js"></script>
-  {%- endif -%}
-  {%- endif -%}
+    <div class="footer-column">
+      <h2>{{ t.footer.company }}</h2>
+      <a href="{{ about_url }}">{{ t.footer.about }}</a>
+      <a href="{{ contact_url }}">{{ t.footer.contact }}</a>
+      <a href="mailto:info@abitaresmart.com">info@abitaresmart.com</a>
+    </div>
+    <div class="footer-column">
+      <h2>{{ t.footer.legal }}</h2>
+      <a href="{{ privacy_url }}">{{ t.footer.privacy }}</a>
+      <a href="{{ terms_url }}">{{ t.footer.terms }}</a>
+      <a href="{{ page.translation_url | default: home_url }}">{{ t.switch_label }}</a>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p>© {{ site.time | date: '%Y' }} AbitareSmart. {{ t.footer.rights }}</p>
+    <a href="#top">{{ t.footer.back_top }} <span aria-hidden="true">↑</span></a>
+  </div>
+</footer>

@@ -1,53 +1,25 @@
 ---
 layout: default
 ---
-
-
-<article class="font-sans relative py-12 md:py-12 bg-white overflow-hidden" itemscope
-  itemtype="http://schema.org/BlogPosting">
-
-  <header class="relative px-4 sm:px-6 lg:px-8">
-    <div class="text-lg max-w-prose mx-auto mb-4">
-      <h1
-        class="mt-2 mb-2 text-3xl text-center-DIS leading-8 font-extrabold tracking-tight-DIS text-gray-800 sm:text-4xl sm:leading-10"
-        itemprop="name headline">
-        {{ page.title | escape }}</h1>
+{% assign lang = page.lang | default: "it" %}
+{% assign t = site.data.i18n[lang] %}
+{% if lang == "en" %}{% assign journal_url = "/en/journal/" %}{% assign back_label = "Back to the journal" %}{% else %}{% assign journal_url = "/blog/" %}{% assign back_label = "Torna al journal" %}{% endif %}
+<article itemscope itemtype="https://schema.org/BlogPosting">
+  <header class="post-hero">
+    <div class="container post-head reveal">
+      <span class="post-category">{{ page.category | default: "Smart living" }}</span>
+      <h1 itemprop="headline">{{ page.title }}</h1>
+      <p class="post-deck" itemprop="description">{{ page.excerpt }}</p>
+      <div class="post-meta">
+        <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%d.%m.%Y" }}</time><span>·</span><span>{{ page.read_time | default: 6 }} {{ t.journal.min_read }}</span>
+      </div>
     </div>
-    <p class="max-w-prose mx-auto mb-2 text-lg uppercase text-gray-500"><span class="font-bold tracking-wide">
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        <time class="dt-published text-xs" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-          {{ page.date | date: date_format }}
-        </time>
-        {%- if page.modified_date -%}
-        ~
-        {%- assign mdate = page.modified_date | date_to_xmlschema -%}
-        <time class="dt-modified text-sm" datetime="{{ mdate }}" itemprop="dateModified">
-          {{ mdate | date: date_format }}
-        </time>
-        {%- endif -%}
-        {%- if page.author -%}
-        • {% for author in page.author %}
-        <span itemprop="author text-sm" itemscope itemtype="http://schema.org/Person">
-          <span class="p-author h-card" itemprop="name">{{ author }}</span></span>
-        {%- if forloop.last == false %}, {% endif -%}
-        {% endfor %}
-        {%- endif -%}
-      </span>
-    </p>
-    <div class="max-w-prose mx-auto mb-4">
-      <img class="mx-auto object-cover" src="/assets/img/blog/{{ page.image }}" alt="{{ page.title }}">
+    <div class="post-cover reveal" data-delay="1">
+      <img src="/assets/img/blog/{{ page.image }}" width="1536" height="1024" alt="" fetchpriority="high" itemprop="image">
     </div>
   </header>
-  {% include share-buttons.html %}
-
-  <div class="prose prose-lg px-4 md:px-0 text-gray-700 mx-auto" itemprop="articleBody">
-    {{ content }}
+  <div class="container post-body">
+    <div class="prose" itemprop="articleBody">{{ content }}</div>
+    <div class="post-back"><a class="text-link" href="{{ journal_url }}">← {{ back_label }}</a><a class="text-link" href="mailto:info@abitaresmart.com">{{ t.nav.contact }}<svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#icon-arrow-up-right"></use></svg></a></div>
   </div>
-
-  {%- if site.disqus.shortname -%}
-  {%- include disqus_comments.html -%}
-  {%- endif -%}
-  {% include share-buttons.html %}
-
-  <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
 </article>

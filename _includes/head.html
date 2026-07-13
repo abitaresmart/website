@@ -1,18 +1,21 @@
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0B211F">
+  <meta name="color-scheme" content="light">
   {%- seo -%}
-
-
+  {% assign lang = page.lang | default: site.lang | default: "it" %}
+  {% if page.translation_url %}
+    <link rel="alternate" hreflang="{% if lang == 'en' %}it{% else %}en{% endif %}" href="{{ page.translation_url | absolute_url }}">
+  {% endif %}
+  <link rel="alternate" hreflang="{{ lang }}" href="{{ page.url | absolute_url }}">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/favicons/favicon.svg">
+  <link rel="apple-touch-icon" href="/assets/img/favicons/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;800;900&display=swap"
-    rel="stylesheet">
-
-  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
-  <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  {% if page.home %}<link rel="preload" as="image" href="/assets/img/redesign/hero-smart-home.png" fetchpriority="high">{% endif %}
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
   {%- feed_meta -%}
-  {%- include custom-head.html -%}
-
+  <script src="{{ '/assets/js/site.js' | relative_url }}" defer></script>
 </head>

@@ -1,8 +1,12 @@
 ---
 layout: post
+lang: it
 title: "Come utilizzare le Routine di Alexa per rendere il tuo Amazon Echo ancora più intelligente"
 excerpt: "Lo strumento di automazione potente di Alexa apre infinite possibilità per la tua casa smart. Scopri come configurare, attivare e sfruttare al meglio le Routine di Alexa per rendere il tuo Amazon Echo (e la tua vita) più intelligente ed efficiente."
 image: 2-alexa.png
+category: "Automazioni"
+read_time: 7
+translation_url: /en/journal/make-more-of-alexa-routines/
 ---
 
 Lo strumento di automazione potente di Alexa apre infinite possibilità per la tua casa smart. Scopri come configurare, attivare e sfruttare al meglio le [Routine di Alexa](https://www.amazon.it/gp/help/customer/display.html?nodeId=G2PYLKJN3XVZ55EQ) per rendere il tuo [Amazon Echo](https://www.amazon.it/Echo-e-Alexa/b?ie=UTF8&node=15619933031) (e la tua vita) più intelligente ed efficiente.

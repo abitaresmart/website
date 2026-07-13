@@ -1,8 +1,12 @@
 ---
 layout: post
+lang: it
 title: "Guida introduttiva ad Apple Homekit"
 excerpt: "Una guida completa per iniziare a utilizzare Apple HomeKit e l’app Apple Casa. Dalla configurazione alle scene e all’automazione domestica."
 image: 1-homekit.png
+category: "Ecosistemi"
+read_time: 9
+translation_url: /en/journal/getting-started-with-apple-home/
 ---
 
 Una guida completa per iniziare a utilizzare Apple HomeKit e l’app Apple Casa. Dalla configurazione alle scene e all’automazione domestica.

@@ -1,8 +1,10 @@
 title: AbitareSmart
+lang: it
+locale: it_IT
 description: > # this means to ignore newlines until "show_excerpts:"
-  Ogni casa può diventare smart: noi ti aiutiamo a farlo con semplicità, sicurezza e attenzione ai tuoi bisogni reali.
-baseurl: "/"
-url: https://abitaresmart.com # change this URL, this is needed for generating right sitemap
+  Domotica semplice, sicura e su misura. Progettiamo case intelligenti che lasciano spazio alla vita.
+baseurl: ""
+url: https://abitaresmart.com
 
 permalink: "/blog/:title/"
 
@@ -19,14 +21,10 @@ highlighter: rouge
 collections:
   posts:
     output: true
-    permalink: "/blog/:title"
+    permalink: "/blog/:title/"
   pages:
     output: true
     permalink: "/:title"
-
-jekyll-minifier:
-  uglifier_args:
-    harmony: true
 
 # soopr:
 #  publish_token: "" # sign up at https://www.soopr.co to get your publish token and personalize share and reaction options
@@ -45,5 +43,13 @@ exclude:
   - postcss.config.js
   - purgecss.config.js
   - tailwind.config.js
+  - assets/fonts
+  - assets/img/cards
+  - assets/img/bg.png
+  - assets/img/shape.svg
+  - assets/img/logo.png
+  - assets/img/AbitareSmart-Logo.png
+  - assets/img/icon.png
+  - assets/img/blog/thumb
   - .gitignore
   - vendor

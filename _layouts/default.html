@@ -1,16 +1,9 @@
-<!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en" }}" class="h-full">
-
-{%- include head.html -%}
-
-<body class='h-full'>
-
-  {%- include nav.html -%}
-
-  {{ content }}
-
-  {%- include footer.html -%}
-
-</body>
-
+<!doctype html>
+<html lang="{{ page.lang | default: site.lang | default: 'it' }}" class="no-js">
+  {%- include head.html -%}
+  <body id="top" class="{% if page.home %}home-page{% endif %}">
+    {%- include nav.html -%}
+    <main id="main-content">{{ content }}</main>
+    {%- include footer.html -%}
+  </body>
 </html>

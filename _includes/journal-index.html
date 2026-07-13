@@ -1,0 +1,25 @@
+{% assign lang = page.lang | default: "it" %}
+{% assign t = site.data.i18n[lang] %}
+<section class="page-hero">
+  <div class="container reveal">
+    <p class="eyebrow"><span></span>{{ t.journal.eyebrow }}</p>
+    <h1>{{ t.journal.title }}</h1>
+    <p>{{ t.journal.body }}</p>
+  </div>
+</section>
+<section class="journal-index">
+  <div class="container">
+    {% assign localized_posts = site.posts | where: "lang", lang %}
+    <div class="journal-list">
+      {% for post in localized_posts %}
+      <article class="journal-card reveal" data-delay="{{ forloop.index0 }}">
+        <a class="journal-image" href="{{ post.url }}"><img src="/assets/img/blog/{{ post.image }}" width="1536" height="1024" loading="lazy" alt=""><span>{{ post.category | default: "Smart living" }}</span></a>
+        <div class="journal-meta"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d.%m.%Y" }}</time><span>·</span><span>{{ post.read_time | default: 6 }} {{ t.journal.min_read }}</span></div>
+        <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+        <p>{{ post.excerpt | strip_html | truncate: 150 }}</p>
+        <a class="card-link" href="{{ post.url }}">{{ t.journal.read }}<svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#icon-arrow-up-right"></use></svg></a>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
