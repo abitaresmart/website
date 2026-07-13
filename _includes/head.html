@@ -1,7 +1,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#06252D">
+  <meta name="theme-color" content="#12192B">
   <meta name="color-scheme" content="light">
   {%- seo -%}
   {% assign lang = page.lang | default: site.lang | default: "it" %}
@@ -9,13 +9,13 @@
     <link rel="alternate" hreflang="{% if lang == 'en' %}it{% else %}en{% endif %}" href="{{ page.translation_url | absolute_url }}">
   {% endif %}
   <link rel="alternate" hreflang="{{ lang }}" href="{{ page.url | absolute_url }}">
-  <link rel="icon" type="image/png" href="/assets/img/abitaresmart-smart-home-flat.png">
-  <link rel="apple-touch-icon" href="/assets/img/abitaresmart-smart-home-flat.png">
+  <link rel="icon" type="image/png" href="/assets/img/abitaresmart-lumen.png">
+  <link rel="apple-touch-icon" href="/assets/img/abitaresmart-lumen.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   {% if page.home %}<link rel="preload" as="image" href="/assets/img/redesign/hero-smart-home.png" fetchpriority="high">{% endif %}
-  <link rel="stylesheet" href="{{ '/assets/css/abitaresmart-original-brand.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/abitaresmart-lumen.css' | relative_url }}">
   {%- feed_meta -%}
   <script src="{{ '/assets/js/site.js' | relative_url }}" defer></script>
 </head>
