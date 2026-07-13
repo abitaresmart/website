@@ -290,9 +290,8 @@ h3 {
 
 .brand img {
   display: block;
-  width: 42px;
-  height: 42px;
-  border-radius: 12px;
+  width: 46px;
+  height: 46px;
   object-fit: contain;
 }
 
@@ -1474,7 +1473,7 @@ h3 {
 .brand-footer img {
   width: 48px;
   height: 48px;
-  border-radius: 14px;
+  border-radius: 50%;
 }
 
 .footer-brand > p {
@@ -1987,8 +1986,8 @@ h3 {
   }
 
   .brand img {
-    width: 38px;
-    height: 38px;
+    width: 42px;
+    height: 42px;
   }
 
   .nav-links {
