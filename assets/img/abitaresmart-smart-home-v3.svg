@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title description">
+  <title id="title">AbitareSmart smart home</title>
+  <desc id="description">A modern teal home containing a wireless signal and an orange connected-home node.</desc>
+  <defs>
+    <linearGradient id="home-surface" x1="24" y1="15" x2="105" y2="119" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#41879A"/>
+      <stop offset=".52" stop-color="#0F576B"/>
+      <stop offset="1" stop-color="#08313D"/>
+    </linearGradient>
+  </defs>
+
+  <path d="M57.55 10.72a10.9 10.9 0 0 1 12.9 0l44.2 32.48a14.05 14.05 0 0 1 5.75 11.32v49.1c0 9.92-8.04 17.96-17.96 17.96H25.56c-9.92 0-17.96-8.04-17.96-17.96v-49.1c0-4.48 2.14-8.7 5.75-11.32l44.2-32.48Z" fill="url(#home-surface)" stroke="#06252D" stroke-width="4.5" stroke-linejoin="round"/>
+
+  <path d="M18.5 50.8 58.7 21.3a8.95 8.95 0 0 1 10.6 0" fill="none" stroke="#7DADBA" stroke-width="4" stroke-linecap="round" opacity=".72"/>
+
+  <path d="M34 64.5c16.57-16.57 43.43-16.57 60 0" fill="none" stroke="#FAFAFA" stroke-width="10.5" stroke-linecap="round"/>
+  <path d="M47 77.5c9.39-9.39 24.61-9.39 34 0" fill="none" stroke="#B0D2E0" stroke-width="10" stroke-linecap="round"/>
+
+  <circle cx="64" cy="94" r="11.5" fill="#06252D" opacity=".46"/>
+  <circle cx="64" cy="94" r="8.5" fill="#FFA552"/>
+  <circle cx="61.3" cy="91.3" r="2.1" fill="#FFE4CB"/>
+</svg>
