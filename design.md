@@ -91,43 +91,45 @@ The Signal palette restores the original neon character of the redesign: botanic
 
 ## 3. Logo
 
-The AbitareSmart **Dimensional Signal** is a freestanding smart-home icon, not a badge or app tile. Four materially distinct elements create the meaning:
+The AbitareSmart **Signal mark** is a freestanding flat vector smart-home icon, not a badge or app tile. Three elements create the meaning:
 
-- the deep botanical **architectural shell** makes the home silhouette immediate;
-- the warm-white **interior plane** creates an open, inhabited portal;
-- the electric-lime **precision signal channel** communicates a live connected system without the generic three-wave Wi-Fi symbol;
+- the botanical-ink **architectural portal** — an open house silhouette drawn as one continuous round-capped stroke — makes the home immediate and welcoming;
+- the electric-lime **precision signal channel** — a single wide arc hugging the hub — communicates a live connected system without the generic three-wave Wi-Fi symbol;
 - the coral **source node** represents the intelligent hub at the centre of the home.
 
-The near-front three-quarter construction gives the mark physical presence without turning it into a product illustration. The silhouette remains simple while controlled depth, bevels, material grain, and studio light make it feel engineered and premium. There is no square container in the primary mark.
+The open base keeps the doorway/portal story: the page surface itself becomes the inhabited interior. The mark is pure geometry — flat color, no gradients, bevels, or lighting — so it stays crisp from a 16 px favicon to full-bleed print. There is no square container in the primary mark.
 
 ### Source assets
 
-- Clean dimensional master: `assets/img/brand/abitaresmart-dimensional-master.png` — 1402 × 1122 transparent PNG
-- Primary website mark: `assets/img/abitaresmart-dimensional-icon.png` — 1400 × 1400 transparent PNG
-- Web-optimized mark: `assets/img/abitaresmart-dimensional-icon-web.png` — 512 × 512 transparent PNG
-- Social avatar: `assets/img/abitaresmart-social-avatar.png` — 2048 × 2048 transparent PNG with a circular warm-paper presentation
-- Compatibility/favicon asset: `assets/img/icon.png` — 512 × 512 PNG
-- Export preparation source: `tools/brand/prepare_icon.py`
+All assets are generated from a single script; never edit the exports by hand.
 
-The transparent high-resolution mark is used in structured organization metadata; its optimized export is used in navigation. The circular compact asset is used by the footer and favicon. The 2048 px circular version is used by the touch icon and is the upload-ready asset for Instagram, Facebook, LinkedIn, X, TikTok, YouTube, and other social profiles.
+- Vector master: `assets/img/brand/abitaresmart-mark.svg` — 512 viewBox, transparent
+- Primary website mark: `assets/img/abitaresmart-mark.png` — 1400 × 1400 transparent PNG
+- Web-optimized mark: `assets/img/abitaresmart-mark-web.png` — 512 × 512 transparent PNG
+- Circular presentation (vector): `assets/img/abitaresmart-mark-disc.svg` — SVG favicon
+- Circular presentation (raster): `assets/img/abitaresmart-mark-disc.png` — 512 × 512 PNG favicon fallback and footer mark
+- Social avatar: `assets/img/abitaresmart-mark-avatar.png` — 2048 × 2048 circular PNG
+- Generator: `tools/brand/generate_mark.py` (requires `cairosvg`)
+
+The transparent high-resolution mark is used in structured organization metadata; its optimized export is used in navigation. The circular presentation is used by the favicon (SVG with PNG fallback) and the footer. The 2048 px circular version is used by the touch icon and is the upload-ready asset for Instagram, Facebook, LinkedIn, X, TikTok, YouTube, and other social profiles.
 
 ### Logo rules
 
-- Minimum digital size: **24 × 24 px**; prefer **42 px or larger** so the material construction remains visible.
+- Minimum digital size: **16 × 16 px** (favicon); prefer **42 px or larger** in layouts.
 - Recommended navigation size: **42–48 px**.
 - Keep external clear space equal to at least **12.5% of the primary mark width** on every side.
-- Scale proportionally; never stretch, skew, rotate, crop, outline, recolor, flatten, trace, or remove the dimensional lighting.
+- Scale proportionally; never stretch, skew, rotate, crop, outline, recolor, or retrace the geometry.
 - Do not add external shadows, glows, gradients, badges, borders, or square containers.
 - Use the transparent primary mark on Canvas, Surface, White, or quiet light imagery.
-- Use the circular social presentation on Ink or other dark surfaces; do not place the botanical shell directly on Ink.
+- Use the circular presentation on Ink or other dark surfaces; do not place the ink portal directly on Ink.
 - For social profiles, upload the 2048 px circular asset directly. The meaningful geometry is centred inside the circular crop-safe area.
 - Keep the wordmark separate and editable as HTML text. Do not bake “AbitareSmart” into the image.
 
-### Construction, material, and color
+### Construction and color
 
-The logo is anchored to four palette colors: Ink and Ink soft `#0B211F` / `#17302D` for the satin architectural shell, White `#FFFDF8` for the ceramic interior plane, Primary `#DDF86A` for the engineered signal channel, and Accent `#FF735C` for the enamel node. Material shadows, highlights, and shaded derivatives are integral to the dimensional master. They must remain restrained and may not introduce a new decorative hue.
+The logo is anchored to three palette colors: Ink `#0B211F` for the architectural portal, Primary `#DDF86A` for the signal channel, and Accent `#FF735C` for the source node. The portal is a single open pentagon stroke (walls and gable) with round caps and joins; the signal is one arc concentric with the node. No other colors, strokes, or effects may be added to the mark.
 
-The primary mark has a transparent background. The social presentation adds a circular Canvas-to-Surface tonal field and a small ambient shadow to protect the silhouette through aggressive platform downsampling. These presentation effects must never be baked into the transparent website mark.
+The primary mark has a transparent background. The circular presentation adds a Canvas-to-Surface tonal field so the mark survives dark browser chrome, platform downsampling, and Ink surfaces. This field must never be baked into the transparent website mark.
 
 ## 4. Typography
 
