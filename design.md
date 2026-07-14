@@ -97,7 +97,7 @@ The AbitareSmart **Signal mark** is a freestanding flat vector smart-home icon, 
 - the electric-lime **precision signal channel** — a single wide arc hugging the hub — communicates a live connected system without the generic three-wave Wi-Fi symbol;
 - the coral **source node** represents the intelligent hub at the centre of the home.
 
-The open base keeps the doorway/portal story: the page surface itself becomes the inhabited interior. The mark is pure geometry — flat color, no gradients, bevels, or lighting — so it stays crisp from a 16 px favicon to full-bleed print. There is no square container in the primary mark.
+The open base keeps the doorway/portal story: the page surface itself becomes the inhabited interior. The geometry is pure vector, so it stays crisp from a 16 px favicon to full-bleed print. The PNG exports add restrained material lighting — a satin vertical tone on the ink portal, a quiet top-light sheen, an enamel node with a small specular, and soft contact shadows — composited at 2048 px and supersampled down. The materials stay quiet; the geometry carries the mark. There is no square container in the primary mark.
 
 ### Source assets
 
@@ -127,7 +127,7 @@ The transparent high-resolution mark is used in structured organization metadata
 
 ### Construction and color
 
-The logo is anchored to three palette colors: Ink `#0B211F` for the architectural portal, Primary `#DDF86A` for the signal channel, and Accent `#FF735C` for the source node. The portal is a single open pentagon stroke (walls and gable) with round caps and joins; the signal is one arc concentric with the node. No other colors, strokes, or effects may be added to the mark.
+The logo is anchored to three palette colors: Ink `#0B211F` for the architectural portal, Primary `#DDF86A` for the signal channel, and Accent `#FF735C` for the source node. The portal is a single open pentagon stroke (walls and gable) with round caps and joins; the signal is one arc concentric with the node. The material lighting in the exports uses only shaded derivatives of these three colors and may not introduce a new decorative hue; no further colors, strokes, or effects may be added to the mark.
 
 The primary mark has a transparent background. The circular presentation adds a Canvas-to-Surface tonal field so the mark survives dark browser chrome, platform downsampling, and Ink surfaces. This field must never be baked into the transparent website mark.
 
