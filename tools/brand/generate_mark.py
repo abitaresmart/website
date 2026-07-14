@@ -1,16 +1,18 @@
 #!/usr/bin/env python3
-"""Generate the AbitareSmart Signal mark and every web export from scratch.
+"""Generate the AbitareSmart "warm core" mark and every web export from scratch.
 
-The geometry is pure vector, built on the Signal palette:
-  - Ink #0B211F      architectural portal (open house silhouette)
-  - Lime #DDF86A     precision signal channel (single arc, not generic Wi-Fi)
-  - Coral #FF735C    source node (the intelligent hub)
+Concept: a solid botanical-ink house opened by a warm arched doorway — an
+Italian portale. A lime lunetta (fanlight window) glows at the top of the
+arch; the coral hub floats in the doorway below it. Solid mass + luminous
+portal — designed PNG-first with restrained material lighting, composited
+at 2048 px and supersampled down.
+
+Palette (Signal design system):
+  - Ink #0B211F      solid architectural shell
+  - White #FFFDF8    interior plate seen through the aperture
+  - Lime #DDF86A     energy ring circulating around the hub
+  - Coral #FF735C    the intelligent hub itself
   - Canvas #F7F4EC / Surface #EFEADF  circular presentation field
-
-The PNG exports add restrained material lighting: a satin vertical gradient
-on the ink portal, a top-light sheen, an enamel node with a specular
-highlight, and soft contact shadows. Everything is composited at 2048 px
-and supersampled down, so edges stay clean at every size.
 
 Outputs (all paths relative to repo root):
   assets/img/brand/abitaresmart-mark.svg      512 master geometry, transparent
@@ -21,57 +23,71 @@ Outputs (all paths relative to repo root):
   assets/img/abitaresmart-mark-avatar.png     2048x2048 circular (touch icon + social)
 """
 
+import io
 import math
 from pathlib import Path
 
 import cairosvg
-from PIL import Image, ImageFilter
+from PIL import Image, ImageChops, ImageFilter
 
 ROOT = Path(__file__).resolve().parents[2]
 IMG = ROOT / "assets" / "img"
 
 INK = "#0B211F"
+WHITE = "#FFFDF8"
 LIME = "#DDF86A"
 CORAL = "#FF735C"
 CANVAS = "#F7F4EC"
 SURFACE = "#EFEADF"
 
-SS = 2048  # supersampling canvas
+SS = 2048          # supersampling canvas
+K = SS / 512       # 512-grid -> supersample scale
 
 # --- geometry (512 viewBox) -------------------------------------------------
-# Open-portal pentagon: two walls and a gabled roof drawn as one continuous
-# round-capped stroke. The open base keeps the doorway/portal brand story.
-WALL_L, WALL_R = 84, 428
-BASE_Y, EAVE_Y, APEX_Y = 442, 232, 84
-STROKE = 58
+# Solid house: filled pentagon whose corners are rounded by stroking the same
+# path with a round-joined stroke (radius = CORNER / 2).
+APEX = (256, 66)
+EAVE_Y, BASE_Y = 218, 444
+X_L, X_R = 96, 416
+CORNER = 44
 
-# Signal: one wide arc hugging the node, centred on the hub.
-NODE = (256, 348)
-NODE_R = 38
-ARC_R = 98
-ARC_W = 36
-ARC_DEG = 20  # arc runs from 180-ARC_DEG to ARC_DEG degrees, over the top
+ARCH = (256, 276)    # doorway arch centre
+R_ARCH = 80
+DOOR_L, DOOR_R = 176, 336
+DOOR_BOTTOM = 470    # past the shell edge; clipped to the silhouette
+R_LUNETTA = 58       # lime fanlight (lunetta) filling the top of the arch
+HUB = (256, 368)     # coral hub floating in the doorway
+R_CORE = 32
 
-HOUSE_D = f"M {WALL_L} {BASE_Y} V {EAVE_Y} L 256 {APEX_Y} L {WALL_R} {EAVE_Y} V {BASE_Y}"
+HOUSE_D = (f"M {X_L} {BASE_Y} L {X_L} {EAVE_Y} L {APEX[0]} {APEX[1]} "
+           f"L {X_R} {EAVE_Y} L {X_R} {BASE_Y} Z")
+DOOR_D = (f"M {DOOR_L} {DOOR_BOTTOM} L {DOOR_L} {ARCH[1]} "
+          f"A {R_ARCH} {R_ARCH} 0 0 1 {DOOR_R} {ARCH[1]} L {DOOR_R} {DOOR_BOTTOM} Z")
+
+# Optical bounds: x 74-438, y 44-466 -> centre (256, 255).
+OPT_CY = 255
 
 
-def arc_path() -> str:
-    a = math.radians(ARC_DEG)
-    dx, dy = ARC_R * math.cos(a), ARC_R * math.sin(a)
-    x1, x2 = NODE[0] - dx, NODE[0] + dx
-    y = NODE[1] - dy
-    return f"M {x1:.2f} {y:.2f} A {ARC_R} {ARC_R} 0 0 1 {x2:.2f} {y:.2f}"
+def lunetta_path() -> str:
+    x1, x2 = ARCH[0] - R_LUNETTA, ARCH[0] + R_LUNETTA
+    return f"M {x1} {ARCH[1]} A {R_LUNETTA} {R_LUNETTA} 0 0 1 {x2} {ARCH[1]} Z"
+
+
+def house_shape(paint: str) -> str:
+    return (f'<path d="{HOUSE_D}" fill="{paint}" stroke="{paint}" '
+            f'stroke-width="{CORNER}" stroke-linejoin="round"/>')
 
 
 # --- flat vector masters ----------------------------------------------------
 
-def flat_group(house=INK, lime=LIME, coral=CORAL) -> str:
-    return f"""  <path d="{HOUSE_D}"
-        fill="none" stroke="{house}" stroke-width="{STROKE}"
-        stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="{arc_path()}" fill="none" stroke="{lime}"
-        stroke-width="{ARC_W}" stroke-linecap="round"/>
-  <circle cx="{NODE[0]}" cy="{NODE[1]}" r="{NODE_R}" fill="{coral}"/>"""
+def flat_group() -> str:
+    return f"""  <defs>
+    <clipPath id="shell"><path d="{HOUSE_D}"/></clipPath>
+  </defs>
+  {house_shape(INK)}
+  <path d="{DOOR_D}" fill="{WHITE}" clip-path="url(#shell)"/>
+  <path d="{lunetta_path()}" fill="{LIME}"/>
+  <circle cx="{HUB[0]}" cy="{HUB[1]}" r="{R_CORE}" fill="{CORAL}"/>"""
 
 
 def wrap(body: str) -> str:
@@ -79,15 +95,10 @@ def wrap(body: str) -> str:
             f'{body}\n</svg>\n')
 
 
-def mark_svg() -> str:
-    return wrap(flat_group())
-
-
 def disc_svg() -> str:
-    # Optical bounds of the mark: x 55-457, y 55-471 -> centre (256, 263).
     scale = 0.72
     tx = 256 - scale * 256
-    ty = 256 - scale * 263
+    ty = 256 - scale * OPT_CY
     return wrap(f"""  <defs>
     <linearGradient id="field" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0" stop-color="{CANVAS}"/>
@@ -105,13 +116,11 @@ def disc_svg() -> str:
 def render(body: str, size: int = SS) -> Image.Image:
     png = cairosvg.svg2png(bytestring=wrap(body).encode(),
                            output_width=size, output_height=size)
-    import io
     return Image.open(io.BytesIO(png)).convert("RGBA")
 
 
 def cast_shadow(layer: Image.Image, blur: float, dy: int,
-                opacity: float, color=(6, 16, 15)) -> Image.Image:
-    """Soft shadow built from a layer's silhouette."""
+                opacity: float, color=(5, 14, 13)) -> Image.Image:
     alpha = layer.split()[3]
     moved = Image.new("L", layer.size, 0)
     moved.paste(alpha, (0, dy))
@@ -122,68 +131,97 @@ def cast_shadow(layer: Image.Image, blur: float, dy: int,
     return shadow
 
 
-def house_layers() -> str:
-    """Satin ink portal: vertical tonal gradient plus a top-light sheen."""
-    return f"""  <defs>
-    <linearGradient id="satin" gradientUnits="userSpaceOnUse"
-        x1="0" y1="{APEX_Y - 30}" x2="0" y2="{BASE_Y + 30}">
-      <stop offset="0" stop-color="#173430"/>
-      <stop offset="0.55" stop-color="#0B211F"/>
-      <stop offset="1" stop-color="#091C1A"/>
-    </linearGradient>
-    <linearGradient id="sheen" gradientUnits="userSpaceOnUse"
-        x1="0" y1="{APEX_Y - 30}" x2="0" y2="{EAVE_Y}">
-      <stop offset="0" stop-color="#FFFDF8" stop-opacity="0.10"/>
-      <stop offset="1" stop-color="#FFFDF8" stop-opacity="0"/>
+def shell_mask() -> Image.Image:
+    return render(house_shape("#fff")).split()[3]
+
+
+def body_layer() -> Image.Image:
+    """Satin ink shell with a quiet top-light and occlusion around the arch."""
+    svg = f"""  <defs>
+    <linearGradient id="satin" gradientUnits="userSpaceOnUse" x1="0" y1="44" x2="0" y2="466">
+      <stop offset="0" stop-color="#1B3A34"/>
+      <stop offset="0.5" stop-color="#0C2320"/>
+      <stop offset="1" stop-color="#071815"/>
     </linearGradient>
   </defs>
-  <path d="{HOUSE_D}" fill="none" stroke="url(#satin)" stroke-width="{STROKE}"
-        stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="{HOUSE_D}" fill="none" stroke="url(#sheen)" stroke-width="{STROKE}"
-        stroke-linecap="round" stroke-linejoin="round"/>"""
+  {house_shape("url(#satin)")}
+  <path d="M {DOOR_L} 466 L {DOOR_L} {ARCH[1]} A {R_ARCH} {R_ARCH} 0 0 1 {DOOR_R} {ARCH[1]} L {DOOR_R} 466"
+        fill="none" stroke="#04100E" stroke-width="10" stroke-opacity="0.4"/>"""
+    img = render(svg)
+    mask = shell_mask()
+    img.putalpha(ImageChops.multiply(img.split()[3], mask))
+    # top-light: a smooth vertical sheen built in PIL so the rounding stroke
+    # cannot double-paint it into a band along the roofline
+    y0, y1, peak = int(44 * K), int(210 * K), 0.11
+    ramp = Image.new("L", (1, SS), 0)
+    ramp.putdata([int(255 * peak * max(0.0, 1 - (y - y0) / (y1 - y0)))
+                  if y >= y0 else int(255 * peak) for y in range(SS)])
+    sheen_a = ImageChops.multiply(ramp.resize((SS, SS)), mask)
+    sheen = Image.new("RGBA", img.size, (255, 253, 248, 255))
+    sheen.putalpha(sheen_a)
+    img.alpha_composite(sheen)
+    return img
 
 
-def arc_layer() -> str:
-    top = NODE[1] - ARC_R - ARC_W / 2
-    return f"""  <defs>
+def plate_layer() -> Image.Image:
+    """Warm-white doorway, recessed: rim shadow under the arch."""
+    plate = render(f'<path d="{DOOR_D}" fill="{WHITE}"/>')
+    plate.putalpha(ImageChops.multiply(plate.split()[3], shell_mask()))
+    mask = plate.split()[3]
+    shift = int(9 * K)
+    moved = Image.new("L", plate.size, 0)
+    moved.paste(mask, (0, shift))
+    crescent = ImageChops.subtract(mask, moved)
+    crescent = crescent.filter(ImageFilter.GaussianBlur(10 * K))
+    crescent = ImageChops.multiply(crescent, mask)
+    crescent = crescent.point(lambda p: int(p * 0.30))
+    inner = Image.new("RGBA", plate.size, (35, 48, 44, 255))
+    inner.putalpha(crescent)
+    plate.alpha_composite(inner)
+    return plate
+
+
+def ring_layer() -> Image.Image:
+    top = ARCH[1] - R_LUNETTA
+    return render(f"""  <defs>
     <linearGradient id="limeg" gradientUnits="userSpaceOnUse"
-        x1="0" y1="{top}" x2="0" y2="{NODE[1]}">
-      <stop offset="0" stop-color="#E9FD90"/>
-      <stop offset="1" stop-color="#D6F25E"/>
+        x1="0" y1="{top}" x2="0" y2="{ARCH[1]}">
+      <stop offset="0" stop-color="#EDFF9E"/>
+      <stop offset="1" stop-color="#D5F158"/>
     </linearGradient>
   </defs>
-  <path d="{arc_path()}" fill="none" stroke="url(#limeg)"
-        stroke-width="{ARC_W}" stroke-linecap="round"/>"""
+  <path d="{lunetta_path()}" fill="url(#limeg)"/>""")
 
 
-def node_layer() -> str:
-    """Enamel hub: warm radial body with a small specular highlight."""
-    return f"""  <defs>
+def core_layer() -> Image.Image:
+    return render(f"""  <defs>
     <radialGradient id="enamel" cx="0.40" cy="0.34" r="0.92">
-      <stop offset="0" stop-color="#FF8B72"/>
+      <stop offset="0" stop-color="#FF8F76"/>
       <stop offset="0.55" stop-color="#FF735C"/>
-      <stop offset="1" stop-color="#EF5D45"/>
+      <stop offset="1" stop-color="#E9563E"/>
     </radialGradient>
     <radialGradient id="spec" cx="0.5" cy="0.5" r="0.5">
-      <stop offset="0" stop-color="#FFFDF8" stop-opacity="0.45"/>
+      <stop offset="0" stop-color="#FFFDF8" stop-opacity="0.42"/>
       <stop offset="1" stop-color="#FFFDF8" stop-opacity="0"/>
     </radialGradient>
   </defs>
-  <circle cx="{NODE[0]}" cy="{NODE[1]}" r="{NODE_R}" fill="url(#enamel)"/>
-  <ellipse cx="{NODE[0] - 12}" cy="{NODE[1] - 14}" rx="10" ry="8" fill="url(#spec)"/>"""
+  <circle cx="{HUB[0]}" cy="{HUB[1]}" r="{R_CORE}" fill="url(#enamel)"/>
+  <ellipse cx="{HUB[0] - 10}" cy="{HUB[1] - 11}" rx="8" ry="6.5" fill="url(#spec)"/>""")
 
 
 def material_mark() -> Image.Image:
-    house = render(house_layers())
-    arc = render(arc_layer())
-    node = render(node_layer())
+    body = body_layer()
+    plate = plate_layer()
+    ring = ring_layer()
+    core = core_layer()
 
     out = Image.new("RGBA", (SS, SS), (0, 0, 0, 0))
-    out.alpha_composite(house)
-    out.alpha_composite(cast_shadow(arc, blur=26, dy=28, opacity=0.15))
-    out.alpha_composite(cast_shadow(node, blur=16, dy=18, opacity=0.20))
-    out.alpha_composite(arc)
-    out.alpha_composite(node)
+    out.alpha_composite(body)
+    out.alpha_composite(plate)
+    out.alpha_composite(cast_shadow(ring, blur=5 * K, dy=int(4 * K), opacity=0.16))
+    out.alpha_composite(cast_shadow(core, blur=4 * K, dy=int(4 * K), opacity=0.20))
+    out.alpha_composite(ring)
+    out.alpha_composite(core)
     return out
 
 
@@ -198,15 +236,13 @@ def material_disc(mark: Image.Image) -> Image.Image:
 
     scale = 0.72
     small = mark.resize((int(SS * scale),) * 2, Image.LANCZOS)
-    # Optical centre of the mark sits at (256, 263) in the 512 grid.
     ox = round(SS / 2 - scale * SS * (256 / 512))
-    oy = round(SS / 2 - scale * SS * (263 / 512))
+    oy = round(SS / 2 - scale * SS * (OPT_CY / 512))
     placed = Image.new("RGBA", (SS, SS), (0, 0, 0, 0))
     placed.alpha_composite(small, (ox, oy))
 
     disc.alpha_composite(cast_shadow(placed, blur=44, dy=34, opacity=0.16))
     disc.alpha_composite(placed)
-    # keep the presentation strictly circular after the shadow pass
     mask = render('  <circle cx="256" cy="256" r="256" fill="#fff"/>').split()[3]
     disc.putalpha(mask)
     return disc
@@ -218,7 +254,7 @@ def save(img: Image.Image, out: Path, size: int) -> None:
 
 
 def main() -> None:
-    (IMG / "brand" / "abitaresmart-mark.svg").write_text(mark_svg())
+    (IMG / "brand" / "abitaresmart-mark.svg").write_text(wrap(flat_group()))
     (IMG / "abitaresmart-mark-disc.svg").write_text(disc_svg())
     print("  assets/img/brand/abitaresmart-mark.svg")
     print("  assets/img/abitaresmart-mark-disc.svg")

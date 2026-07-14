@@ -6,12 +6,13 @@
     </linearGradient>
   </defs>
   <circle cx="256" cy="256" r="256" fill="url(#field)"/>
-  <g transform="translate(71.68 66.64) scale(0.72)">
-  <path d="M 84 442 V 232 L 256 84 L 428 232 V 442"
-        fill="none" stroke="#0B211F" stroke-width="58"
-        stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M 163.91 314.48 A 98 98 0 0 1 348.09 314.48" fill="none" stroke="#DDF86A"
-        stroke-width="36" stroke-linecap="round"/>
-  <circle cx="256" cy="348" r="38" fill="#FF735C"/>
+  <g transform="translate(71.68 72.40) scale(0.72)">
+  <defs>
+    <clipPath id="shell"><path d="M 96 444 L 96 218 L 256 66 L 416 218 L 416 444 Z"/></clipPath>
+  </defs>
+  <path d="M 96 444 L 96 218 L 256 66 L 416 218 L 416 444 Z" fill="#0B211F" stroke="#0B211F" stroke-width="44" stroke-linejoin="round"/>
+  <path d="M 176 470 L 176 276 A 80 80 0 0 1 336 276 L 336 470 Z" fill="#FFFDF8" clip-path="url(#shell)"/>
+  <path d="M 198 276 A 58 58 0 0 1 314 276 Z" fill="#DDF86A"/>
+  <circle cx="256" cy="368" r="32" fill="#FF735C"/>
   </g>
 </svg>

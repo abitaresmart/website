@@ -91,13 +91,14 @@ The Signal palette restores the original neon character of the redesign: botanic
 
 ## 3. Logo
 
-The AbitareSmart **Signal mark** is a freestanding flat vector smart-home icon, not a badge or app tile. Three elements create the meaning:
+The AbitareSmart **Portale mark** is a freestanding smart-home icon, not a badge or app tile. Four elements create the meaning:
 
-- the botanical-ink **architectural portal** — an open house silhouette drawn as one continuous round-capped stroke — makes the home immediate and welcoming;
-- the electric-lime **precision signal channel** — a single wide arc hugging the hub — communicates a live connected system without the generic three-wave Wi-Fi symbol;
-- the coral **source node** represents the intelligent hub at the centre of the home.
+- the solid botanical-ink **architectural shell** — a softly rounded gabled silhouette — gives the mark confident, protective mass;
+- the warm-white **arched doorway** (the *portale*) opens the shell to the ground, welcoming you into the inhabited home;
+- the electric-lime **lunetta** — the fanlight window glowing at the top of the arch — communicates live intelligent energy without any Wi-Fi cliché;
+- the coral **hub** floats in the doorway: the intelligent heart of the home.
 
-The open base keeps the doorway/portal story: the page surface itself becomes the inhabited interior. The geometry is pure vector, so it stays crisp from a 16 px favicon to full-bleed print. The PNG exports add restrained material lighting — a satin vertical tone on the ink portal, a quiet top-light sheen, an enamel node with a small specular, and soft contact shadows — composited at 2048 px and supersampled down. The materials stay quiet; the geometry carries the mark. There is no square container in the primary mark.
+The composition is solid mass plus luminous portal: you look through the wall of a secure home into its warm, connected centre. The geometry is pure vector, so it stays crisp from a 16 px favicon to full-bleed print. The PNG exports add restrained material lighting — a satin vertical tone with a quiet top-light on the shell, a recessed rim shadow under the arch, an enamel hub with a small specular, and soft contact shadows — composited at 2048 px and supersampled down. The materials stay quiet; the geometry carries the mark. There is no square container in the primary mark.
 
 ### Source assets
 
@@ -127,7 +128,7 @@ The transparent high-resolution mark is used in structured organization metadata
 
 ### Construction and color
 
-The logo is anchored to three palette colors: Ink `#0B211F` for the architectural portal, Primary `#DDF86A` for the signal channel, and Accent `#FF735C` for the source node. The portal is a single open pentagon stroke (walls and gable) with round caps and joins; the signal is one arc concentric with the node. The material lighting in the exports uses only shaded derivatives of these three colors and may not introduce a new decorative hue; no further colors, strokes, or effects may be added to the mark.
+The logo is anchored to four palette colors: Ink `#0B211F` for the solid architectural shell, White `#FFFDF8` for the arched doorway, Primary `#DDF86A` for the lunetta fanlight, and Accent `#FF735C` for the hub. The shell is a filled gabled pentagon with rounded corners; the doorway is a half-circle arch cut to the base of the silhouette; the lunetta is a filled half-disc concentric with the arch; the hub is a circle floating in the doorway. The material lighting in the exports uses only shaded derivatives of these colors and may not introduce a new decorative hue; no further colors, strokes, or effects may be added to the mark.
 
 The primary mark has a transparent background. The circular presentation adds a Canvas-to-Surface tonal field so the mark survives dark browser chrome, platform downsampling, and Ink surfaces. This field must never be baked into the transparent website mark.
 
