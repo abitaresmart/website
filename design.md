@@ -112,7 +112,20 @@ All assets are generated from a single script; never edit the exports by hand.
 - Social avatar: `assets/img/abitaresmart-mark-avatar.png` — 2048 × 2048 circular PNG
 - Generator: `tools/brand/generate_mark.py` (requires `cairosvg`)
 
-The transparent high-resolution mark is used in structured organization metadata; its optimized export is used in navigation. The circular presentation is used by the favicon (SVG with PNG fallback) and the footer. The 2048 px circular version is used by the touch icon and is the upload-ready asset for Instagram, Facebook, LinkedIn, X, TikTok, YouTube, and other social profiles.
+The transparent high-resolution mark is used in structured organization metadata; its optimized export is used in navigation. The circular presentation remains the footer treatment, and its 2048 px version remains available as a clean logo-first social avatar. Browser, touch, and PWA icon surfaces use the premium website presentation described below.
+
+### Premium website icon
+
+The favicon, Apple touch icon, and PWA installation icon use a dedicated full-bleed **Portale presentation**. It translates the canonical geometry into a tactile 2.5D object while preserving the four-part hierarchy: Ink shell, White doorway, electric lunetta, and coral hub. The canonical transparent SVG remains the source of truth for navigation, structured data, and identity work; the premium presentation is an icon treatment, not a replacement logo.
+
+- Master: `assets/img/brand/abitaresmart-premium-icon.png` — 1024 × 1024 RGB
+- Browser favicon: `assets/img/favicons/favicon.ico` — 16, 32, and 48 px
+- High-resolution favicon: `assets/img/favicons/favicon-96x96.png`
+- Apple touch icon: `assets/img/favicons/apple-touch-icon.png` — 180 × 180
+- PWA icons: `assets/img/favicons/web-app-manifest-192x192.png` and `web-app-manifest-512x512.png`
+- Exporter: `tools/brand/prepare_premium_web_icon.py` (requires Pillow)
+
+The icon uses Canvas `#F7F4EC` and Surface `#EFEADF` as its full-bleed field. Dimensional shading is restricted to Ink/Ink soft for the shell, White for the doorway, Primary/Primary hover for the lunetta, and Accent/Accent strong for the hub. Mint and Sky appear only as quiet background signal details. Do not crop, recolor, or place an additional rounded-corner mask into the source artwork.
 
 ### Logo rules
 
