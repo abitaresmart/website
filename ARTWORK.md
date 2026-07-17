@@ -2,7 +2,7 @@
 
 The smart-home source artwork at `assets/img/brand/abitaresmart-smart-home-artwork.png` was generated from scratch with Codex's built-in image-generation tool. It did not use the Portale logo or either previous website icon as an image reference.
 
-`tools/brand/prepare_premium_web_icon.py` applies the rounded-square layout separately. It creates the transparent 1024 px browser master at `assets/img/brand/abitaresmart-premium-icon.png`, then exports the favicon, Apple touch, and PWA sizes. Apple touch and PWA exports receive a Canvas backing; browser icons retain transparent corners.
+`tools/brand/prepare_smart_home_artwork.py` applies the rounded-square layout separately and creates the preserved 1024 px campaign master at `assets/img/brand/abitaresmart-premium-icon.png`. It does not modify the active navbar or favicon assets.
 
 ## Final generation prompt
 
@@ -31,3 +31,33 @@ The smart-home source artwork at `assets/img/brand/abitaresmart-smart-home-artwo
 > Constraints: Completely original composition generated from scratch. Full-bleed square artwork with no transparency. No text, letters, numbers, wordmark, existing logo, watermark, UI, screenshot frame, device mockup, external rounded-corner mask, app-store frame, giant Wi-Fi glyph, padlock glyph, robot, human character, floating phone, generic circuit-board house outline, or multiple houses. No cropped roof or doorway. Preserve clear breathing room for the later rounded-square layout.
 >
 > Avoid: minimal logo, flat icon, sparse beige background, generic plastic render, stock illustration, sterile corporate infographic, photorealistic real-estate image, excessive tiny gadgets, visual clutter, dark horror mood, childish toy-house proportions.
+
+## Minimal brand-logo icon
+
+The navbar/favicon source at `assets/img/brand/abitaresmart-logo-artwork.png` was generated independently with the same built-in image-generation tool. The wordmark is intentionally excluded from the image and rendered as live HTML beside the mark. `tools/brand/prepare_brand_logo.py` produces the rounded navbar, favicon, Apple touch, and PWA assets.
+
+### Final generation prompt
+
+> Use case: logo-brand
+>
+> Asset type: premium minimal brand icon for the AbitareSmart website navbar, favicon, Apple touch icon, and PWA icon
+>
+> Primary request: Create one original, exceptionally polished minimal logo icon for AbitareSmart, a premium Italian smart-home brand. The image will sit immediately to the left of the separately rendered wordmark “AbitareSmart,” so the icon itself must contain no text. It must communicate home, intelligence, warmth, connectivity, and refined sustainable living with a tiny number of bold shapes and remain instantly recognizable at 16 pixels.
+>
+> Concept: A deep Botanical Ink rounded-square field containing one elegant warm-white architectural ribbon that forms both a simple pitched roof and an open doorway/portal in a single coherent symbol. Inside the architecture, add one short electric-lime energy arc and one small coral circular hub connected by a restrained mint detail. The relationship between roof, portal, arc, and hub should imply an intelligent connected home without using a Wi-Fi glyph, circuit-board pattern, padlock, plug, lightbulb, or letter.
+>
+> Scene/background: One logo only, centered straight-on. The Botanical Ink rounded square fills approximately 94 percent of the canvas, with a corner radius around 22 percent and only tiny warm Canvas corner areas outside it. No scenery, landscape, room, garden, sky, decorative background objects, or presentation mockup.
+>
+> Style/medium: Premium minimal brand design with crisp, deliberate geometry and superb optical balance. Mostly flat graphic forms with restrained tactile finish: subtle satin depth in the Ink field, warm ceramic character in the white symbol, a tiny enamel highlight on the lime arc and coral hub, and extremely subtle paper grain. Sophisticated contemporary European identity design. Clean enough to reproduce as a simple vector later, but rendered as a beautiful finished image now.
+>
+> Composition/framing: One symmetrical or near-symmetrical symbol centered in the rounded square. The interior mark occupies about 58 percent of the canvas and uses thick, favicon-safe forms with generous negative space. No thin hairlines. All essential details remain legible at 16, 32, 42, and 48 pixels. Strong silhouette, even margins, front-on orthographic view, no perspective.
+>
+> Lighting/mood: Restrained soft top-left highlight, calm, intelligent, welcoming, secure, premium, quietly optimistic. No cinematic scene lighting, glow clouds, lens flare, or dramatic shadows.
+>
+> Color palette: Use only Botanical Ink #0B211F, Ink soft #17302D, Canvas #F7F4EC, White #FFFDF8, Electric Primary #DDF86A, Electric hover #EBFF98, Mint pale #D8F7E8, Mint soft #AEECCF, Coral #FF735C, and Coral strong #B93A31.
+>
+> Shape budget: One rounded-square field, one unified architectural symbol, one lime arc, one coral hub, and at most one tiny mint connector. Every element must earn its place. Reduce rather than decorate.
+>
+> Constraints: One icon only. No text, letters, initials, numbers, wordmark, watermark, existing logo, multiple options, logo sheet, grid, border frame, app-store badge, device mockup, shadows outside the rounded square, transparent checkerboard, house illustration, multiple windows, roof tiles, chimney, furniture, people, plants, landscape, tiny devices, generic Wi-Fi symbol, circuit traces, lock, shield, key, plug, robot, or excessive detail.
+>
+> Avoid: complex illustration, realistic house, mobile-game scene, stock smart-home icon, generic clip art, overly cute style, glossy plastic 3D, thick bevels, neon glow, clutter, gradients that muddy the palette, thin lines, small illegible details, letter A, letter S.

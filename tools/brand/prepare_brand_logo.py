@@ -1,19 +1,20 @@
 #!/usr/bin/env python3
-"""Build the rounded AbitareSmart icon and export its browser/PWA sizes."""
+"""Build the AbitareSmart navbar logo icon and browser/PWA exports."""
 
 from pathlib import Path
 
-from PIL import Image, ImageDraw, ImageFilter, ImageOps
+from PIL import Image, ImageDraw, ImageOps
 
 
 ROOT = Path(__file__).resolve().parents[2]
-ARTWORK = ROOT / "assets" / "img" / "brand" / "abitaresmart-smart-home-artwork.png"
-MASTER = ROOT / "assets" / "img" / "brand" / "abitaresmart-premium-icon.png"
+ARTWORK = ROOT / "assets" / "img" / "brand" / "abitaresmart-logo-artwork.png"
+MASTER = ROOT / "assets" / "img" / "brand" / "abitaresmart-logo-icon.png"
+NAVBAR = ROOT / "assets" / "img" / "brand" / "abitaresmart-logo-icon-96.png"
 FAVICONS = ROOT / "assets" / "img" / "favicons"
 
 MASTER_SIZE = 1024
-CARD_INSET = 28
-CARD_RADIUS = 212
+MASK_INSET = 16
+MASK_RADIUS = 224
 CANVAS = (247, 244, 236)
 
 PNG_EXPORTS = {
@@ -24,42 +25,27 @@ PNG_EXPORTS = {
 }
 
 
-def rounded_mask(size: int, inset: int, radius: int) -> Image.Image:
+def rounded_mask() -> Image.Image:
     scale = 4
-    mask = Image.new("L", (size * scale, size * scale), 0)
-    draw = ImageDraw.Draw(mask)
-    draw.rounded_rectangle(
-        (
-            inset * scale,
-            inset * scale,
-            (size - inset) * scale,
-            (size - inset) * scale,
-        ),
-        radius=radius * scale,
+    size = MASTER_SIZE * scale
+    inset = MASK_INSET * scale
+    mask = Image.new("L", (size, size), 0)
+    ImageDraw.Draw(mask).rounded_rectangle(
+        (inset, inset, size - inset, size - inset),
+        radius=MASK_RADIUS * scale,
         fill=255,
     )
-    return mask.resize((size, size), Image.Resampling.LANCZOS)
+    return mask.resize((MASTER_SIZE, MASTER_SIZE), Image.Resampling.LANCZOS)
 
 
 def build_master(artwork: Image.Image) -> Image.Image:
-    inner_size = MASTER_SIZE - (CARD_INSET * 2)
-    card = ImageOps.fit(
+    fitted = ImageOps.fit(
         artwork.convert("RGB"),
-        (inner_size, inner_size),
+        (MASTER_SIZE, MASTER_SIZE),
         method=Image.Resampling.LANCZOS,
     ).convert("RGBA")
-
-    mask = rounded_mask(MASTER_SIZE, CARD_INSET, CARD_RADIUS)
-    master = Image.new("RGBA", (MASTER_SIZE, MASTER_SIZE), (0, 0, 0, 0))
-
-    shadow_alpha = mask.filter(ImageFilter.GaussianBlur(14))
-    shadow = Image.new("RGBA", master.size, (11, 33, 31, 0))
-    shadow.putalpha(shadow_alpha.point(lambda alpha: round(alpha * 0.28)))
-    master.alpha_composite(shadow, dest=(0, 8))
-
-    card_layer = Image.new("RGBA", master.size, (0, 0, 0, 0))
-    card_layer.paste(card, (CARD_INSET, CARD_INSET))
-    master.paste(card_layer, (0, 0), mask)
+    master = Image.new("RGBA", fitted.size, (0, 0, 0, 0))
+    master.paste(fitted, (0, 0), rounded_mask())
     return master
 
 
@@ -81,7 +67,9 @@ def main() -> None:
 
     master = build_master(artwork)
     master.save(MASTER, "PNG", optimize=True)
+    resized(master, 96, False).save(NAVBAR, "PNG", optimize=True)
     print(f"  {MASTER.relative_to(ROOT)}  {MASTER_SIZE}x{MASTER_SIZE} rounded RGBA")
+    print(f"  {NAVBAR.relative_to(ROOT)}  96x96 navbar")
 
     FAVICONS.mkdir(parents=True, exist_ok=True)
     for filename, (size, opaque) in PNG_EXPORTS.items():

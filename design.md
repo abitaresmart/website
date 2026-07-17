@@ -114,19 +114,30 @@ All assets are generated from a single script; never edit the exports by hand.
 
 The transparent high-resolution mark is used in structured organization metadata; its optimized export is used in navigation. The circular presentation remains the footer treatment, and its 2048 px version remains available as a clean logo-first social avatar. Browser, touch, and PWA icon surfaces use the premium website presentation described below.
 
-### Premium website icon
+### Primary brand icon
 
-The favicon, Apple touch icon, and PWA installation icon use a dedicated **smart-home illustration generated from scratch**. A warm contemporary Italian home, connected energy paths, and a coral control hub communicate the product category directly without altering or imitating the canonical Portale logo. The canonical transparent SVG remains the source of truth for navigation, structured data, and identity work.
+The navbar pairs a dedicated minimal image mark with the live HTML wordmark **AbitareSmart**. The mark uses one Ink rounded-square field, one warm-white architectural ribbon, one electric smart-energy arc, one coral hub, and one restrained mint connection. Its low shape count and bold negative space keep it recognizable from the 48 px navbar presentation down to a 16 px favicon.
 
-- Source artwork: `assets/img/brand/abitaresmart-smart-home-artwork.png` — full-bleed generated RGB artwork
-- Rounded master: `assets/img/brand/abitaresmart-premium-icon.png` — 1024 × 1024 RGBA
+- Generated source: `assets/img/brand/abitaresmart-logo-artwork.png` — full-resolution RGB artwork
+- Rounded master: `assets/img/brand/abitaresmart-logo-icon.png` — 1024 × 1024 RGBA
+- Navbar export: `assets/img/brand/abitaresmart-logo-icon-96.png` — 96 × 96 RGBA
 - Browser favicon: `assets/img/favicons/favicon.ico` — 16, 32, and 48 px
 - High-resolution favicon: `assets/img/favicons/favicon-96x96.png`
 - Apple touch icon: `assets/img/favicons/apple-touch-icon.png` — 180 × 180
 - PWA icons: `assets/img/favicons/web-app-manifest-192x192.png` and `web-app-manifest-512x512.png`
-- Exporter: `tools/brand/prepare_premium_web_icon.py` (requires Pillow)
+- Exporter: `tools/brand/prepare_brand_logo.py` (requires Pillow)
 
-The source artwork uses the complete site palette: Ink and Ink soft for structure, Canvas/Surface/White for architecture and atmosphere, Electric and Mint for connected energy, Sky for restrained system details, and Coral for the central hub. The exporter applies the rounded-square crop, subtle Ink shadow, transparent browser-icon corners, and Canvas-backed touch/PWA variants. Do not bake a second corner mask into the source artwork.
+The exporter creates transparent rounded corners for the navbar and browser assets, plus Canvas-backed Apple/PWA variants. The lettering remains HTML text rather than being embedded in the generated image.
+
+### Detailed smart-home artwork
+
+The detailed **smart-home illustration generated from scratch** remains available as a separate campaign-quality asset. A warm contemporary Italian home, connected energy paths, and a coral control hub communicate the product category directly without altering or imitating the canonical Portale logo.
+
+- Source artwork: `assets/img/brand/abitaresmart-smart-home-artwork.png` — full-bleed generated RGB artwork
+- Rounded master: `assets/img/brand/abitaresmart-premium-icon.png` — 1024 × 1024 RGBA
+- Exporter: `tools/brand/prepare_smart_home_artwork.py` (requires Pillow)
+
+The source artwork uses the complete site palette: Ink and Ink soft for structure, Canvas/Surface/White for architecture and atmosphere, Electric and Mint for connected energy, Sky for restrained system details, and Coral for the central hub. Its exporter applies a rounded-square crop and subtle Ink shadow without touching any active logo or favicon files.
 
 ### Logo rules
 

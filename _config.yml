@@ -3,7 +3,7 @@ lang: it
 locale: it_IT
 description: > # this means to ignore newlines until "show_excerpts:"
   Domotica semplice, sicura e su misura. Progettiamo case intelligenti che lasciano spazio alla vita.
-logo: /assets/img/abitaresmart-mark.png
+logo: /assets/img/brand/abitaresmart-logo-icon.png
 baseurl: ""
 url: https://abitaresmart.com
 
