@@ -116,7 +116,7 @@ The transparent high-resolution mark is used in structured organization metadata
 
 ### Primary brand icon
 
-The navbar pairs the premium illustrated **Living Portal** mark with the live HTML wordmark **AbitareSmart**. Layered Ink architecture surrounds a luminous warm-white portal; an electric energy ribbon reconnects to a coral hub while restrained botanical and system details express sustainable intelligence. Strong massing preserves the portal-and-hub hierarchy at 16 px, while the 48 px navbar and larger touch surfaces reveal the painterly facets, material depth, and studio lighting.
+The navbar pairs a restrained **Smart Threshold** mark with the live HTML wordmark **AbitareSmart**. A honed warm-white architectural frame surrounds an Ink doorway, with a calm electric lunetta, coral hub, and a single mint reveal. The medium-low complexity keeps the mark immediate at 16 px, while shallow relief, precise negative space, and controlled material lighting give the 48 px navbar and larger touch surfaces a mature premium finish.
 
 - Generated source: `assets/img/brand/abitaresmart-logo-artwork.png` — full-resolution RGB artwork
 - Rounded master: `assets/img/brand/abitaresmart-logo-icon.png` — 1024 × 1024 RGBA
