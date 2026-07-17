@@ -42,7 +42,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: calc(var(--header-h) + 10px);
+  scroll-padding-top: 12px;
   background: var(--color-canvas);
 }
 
