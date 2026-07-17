@@ -116,16 +116,17 @@ The transparent high-resolution mark is used in structured organization metadata
 
 ### Premium website icon
 
-The favicon, Apple touch icon, and PWA installation icon use a dedicated full-bleed **Portale presentation**. It translates the canonical geometry into a tactile 2.5D object while preserving the four-part hierarchy: Ink shell, White doorway, electric lunetta, and coral hub. The canonical transparent SVG remains the source of truth for navigation, structured data, and identity work; the premium presentation is an icon treatment, not a replacement logo.
+The favicon, Apple touch icon, and PWA installation icon use a dedicated **smart-home illustration generated from scratch**. A warm contemporary Italian home, connected energy paths, and a coral control hub communicate the product category directly without altering or imitating the canonical Portale logo. The canonical transparent SVG remains the source of truth for navigation, structured data, and identity work.
 
-- Master: `assets/img/brand/abitaresmart-premium-icon.png` — 1024 × 1024 RGB
+- Source artwork: `assets/img/brand/abitaresmart-smart-home-artwork.png` — full-bleed generated RGB artwork
+- Rounded master: `assets/img/brand/abitaresmart-premium-icon.png` — 1024 × 1024 RGBA
 - Browser favicon: `assets/img/favicons/favicon.ico` — 16, 32, and 48 px
 - High-resolution favicon: `assets/img/favicons/favicon-96x96.png`
 - Apple touch icon: `assets/img/favicons/apple-touch-icon.png` — 180 × 180
 - PWA icons: `assets/img/favicons/web-app-manifest-192x192.png` and `web-app-manifest-512x512.png`
 - Exporter: `tools/brand/prepare_premium_web_icon.py` (requires Pillow)
 
-The icon uses Canvas `#F7F4EC` and Surface `#EFEADF` as its full-bleed field. Dimensional shading is restricted to Ink/Ink soft for the shell, White for the doorway, Primary/Primary hover for the lunetta, and Accent/Accent strong for the hub. Mint and Sky appear only as quiet background signal details. Do not crop, recolor, or place an additional rounded-corner mask into the source artwork.
+The source artwork uses the complete site palette: Ink and Ink soft for structure, Canvas/Surface/White for architecture and atmosphere, Electric and Mint for connected energy, Sky for restrained system details, and Coral for the central hub. The exporter applies the rounded-square crop, subtle Ink shadow, transparent browser-icon corners, and Canvas-backed touch/PWA variants. Do not bake a second corner mask into the source artwork.
 
 ### Logo rules
 
