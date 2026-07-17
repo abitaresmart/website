@@ -3,7 +3,7 @@ layout: post
 lang: it
 title: "Proteggere la tua Casa Intelligente: Le Pratiche Essenziali per la Sicurezza"
 excerpt: "Con la crescita delle smart home, la sicurezza diventa indispensabile. Una casa intelligente deve essere non solo funzionale ma anche protetta da intrusioni e attacchi informatici. Questo articolo presenta le pratiche per garantire un ambiente domestico smart sicuro e affidabile."
-image: 3-security.png
+image: /assets/img/blog/3-security.png
 category: "Sicurezza"
 read_time: 10
 translation_url: /en/journal/protect-your-smart-home/

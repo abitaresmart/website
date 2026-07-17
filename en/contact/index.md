@@ -1,7 +1,7 @@
 ---
 layout: default
 lang: en
-title: "Tell us about your home | AbitareSmart"
+title: "Tell us about your home"
 description: "Book an initial conversation with AbitareSmart and tell us about your intelligent-home project."
 permalink: /en/contact/
 translation_url: /contatti/

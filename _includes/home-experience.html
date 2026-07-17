@@ -156,7 +156,7 @@
     <div class="journal-grid">
       {% for post in localized_posts limit:3 %}
       <article class="journal-card reveal" data-delay="{{ forloop.index0 }}">
-        <a class="journal-image" href="{{ post.url }}"><img src="/assets/img/blog/{{ post.image }}" width="1536" height="1024" loading="lazy" alt=""><span>{{ post.category | default: "Smart living" }}</span></a>
+        <a class="journal-image" href="{{ post.url }}"><img src="{{ post.image }}" width="1536" height="1024" loading="lazy" alt=""><span>{{ post.category | default: "Smart living" }}</span></a>
         <div class="journal-meta"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d.%m.%Y" }}</time><span>·</span><span>{{ post.read_time | default: 6 }} {{ t.journal.min_read }}</span></div>
         <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
         <a class="card-link" href="{{ post.url }}">{{ t.journal.read }}<svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#icon-arrow-up-right"></use></svg></a>

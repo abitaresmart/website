@@ -3,7 +3,7 @@ layout: post
 lang: en
 title: "Protect your smart home: an essential security guide"
 excerpt: "A practical, layered approach to securing connected devices, household accounts, remote access, and the network at the heart of your smart home."
-image: 3-security.png
+image: /assets/img/blog/3-security.png
 category: "Security"
 read_time: 9
 permalink: /en/journal/protect-your-smart-home/

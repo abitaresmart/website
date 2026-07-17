@@ -1,7 +1,7 @@
 ---
 layout: default
 lang: it
-title: "Parliamo della tua casa | AbitareSmart"
+title: "Parliamo della tua casa"
 description: "Prenota una prima consulenza con AbitareSmart e raccontaci il tuo progetto di casa intelligente."
 permalink: /contatti/
 translation_url: /en/contact/

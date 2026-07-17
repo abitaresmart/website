@@ -3,7 +3,7 @@ layout: post
 lang: en
 title: "Getting started with Apple Home"
 excerpt: "A clear guide to setting up Apple Home, choosing compatible accessories, organising rooms, and building dependable scenes and automations."
-image: 1-homekit.png
+image: /assets/img/blog/1-homekit.png
 category: "Ecosystems"
 read_time: 8
 permalink: /en/journal/getting-started-with-apple-home/

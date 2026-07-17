@@ -9,6 +9,12 @@ url: https://abitaresmart.com
 
 permalink: "/blog/:title/"
 
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/img/brand/social-card.png
+
 plugins:
   - jekyll-feed
   - jekyll-soopr-seo-tag
@@ -44,7 +50,6 @@ exclude:
   - postcss.config.js
   - purgecss.config.js
   - tailwind.config.js
-  - assets/fonts
   - assets/img/cards
   - assets/img/bg.png
   - assets/img/shape.svg

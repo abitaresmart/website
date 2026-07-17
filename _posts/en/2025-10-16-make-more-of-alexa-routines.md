@@ -3,7 +3,7 @@ layout: post
 lang: en
 title: "Make more of Alexa Routines"
 excerpt: "Learn how to combine voice, schedules, sensors, and smart-home actions into Alexa Routines that are useful, predictable, and easy for everyone to use."
-image: 2-alexa.png
+image: /assets/img/blog/2-alexa.png
 category: "Automations"
 read_time: 7
 permalink: /en/journal/make-more-of-alexa-routines/
