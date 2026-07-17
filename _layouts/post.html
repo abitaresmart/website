@@ -15,7 +15,7 @@ layout: default
       </div>
     </div>
     <div class="post-cover reveal" data-delay="1">
-      <img src="{{ page.image }}" width="1536" height="1024" alt="" fetchpriority="high" itemprop="image">
+      <img src="{{ page.image | replace: ".png", ".webp" }}" width="1536" height="1024" alt="" fetchpriority="high" itemprop="image">
     </div>
   </header>
   <div class="container post-body">

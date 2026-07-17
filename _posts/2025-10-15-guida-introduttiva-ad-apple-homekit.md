@@ -19,7 +19,7 @@ L’app Casa funge da centro di controllo intuitivo, permettendo di gestire in m
 
 L’app Casa offre funzioni avanzate di automazione che consentono ai dispositivi di interagire tra loro in base all’ora, alla posizione o all’attività dei sensori. Questa funzionalità non solo aumenta la comodità, ma favorisce anche l’efficienza energetica ottimizzando le prestazioni dell’ecosistema smart della tua abitazione.
 
-{% include image.html url="/assets/img/blog/blog-1/casa-1.png" description="Figura 1 - App Casa di Apple" %}
+{% include image.html url="/assets/img/blog/blog-1/casa-1.webp" description="Figura 1 - App Casa di Apple" %}
 
 ### Accesso remoto ad Apple Casa
 
@@ -60,7 +60,7 @@ Se sei alle prime armi, la buona notizia è che alcuni prodotti Apple HomeKit si
 
 L’interfaccia dell’app Casa mostra in alto i sensori, seguiti dalle scene create e dai controlli per ogni stanza. Se hai appena iniziato, concentrati sui pulsanti di controllo principali, rappresentati da grandi riquadri in ogni ambiente. All’inizio la schermata potrebbe sembrare vuota, ma si popolerà man mano che aggiungi accessori.
 
-{% include image.html url="/assets/img/blog/blog-1/casa-2.png" description="Figura 2 - Accessori Smart su App Casa" %}
+{% include image.html url="/assets/img/blog/blog-1/casa-2.webp" description="Figura 2 - Accessori Smart su App Casa" %}
 
 ### Scene in Apple Casa
 
@@ -75,7 +75,7 @@ Esempi di scene:
 
 Con l’esperienza, potrai personalizzare e creare nuove scene per diversi momenti o atmosfere, come Natale o lettura.
 
-{% include image.html url="/assets/img/blog/blog-1/casa-3.png" description="Figura 3 - Scene suggerite" %}
+{% include image.html url="/assets/img/blog/blog-1/casa-3.webp" description="Figura 3 - Scene suggerite" %}
 
 ### Automazione in Apple Casa
 
