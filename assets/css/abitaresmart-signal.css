@@ -263,6 +263,11 @@ h3 {
   width: 100%;
   padding: 14px 0 10px;
   pointer-events: none;
+  transition: transform 260ms ease;
+}
+
+.site-header.is-hidden {
+  transform: translateY(-115%);
 }
 
 .nav-shell {
@@ -377,6 +382,45 @@ body.menu-open .nav-shell {
 
 .nav-toggle .icon-close {
   display: none;
+}
+
+.scroll-top {
+  position: fixed;
+  z-index: 90;
+  right: 18px;
+  bottom: 18px;
+  display: grid;
+  width: 52px;
+  height: 52px;
+  padding: 0;
+  place-items: center;
+  border: 1px solid var(--color-line);
+  border-radius: 50%;
+  color: var(--color-ink);
+  background: rgba(255, 253, 248, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: var(--shadow-sm);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(12px);
+  transition: opacity 200ms ease, transform 200ms ease,
+    border-color 160ms ease, background 160ms ease;
+}
+
+.scroll-top .icon {
+  transform: rotate(-45deg);
+}
+
+.scroll-top.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: none;
+}
+
+.scroll-top:hover {
+  border-color: var(--color-ink);
+  background: var(--color-white);
 }
 
 /* Hero */
@@ -2247,5 +2291,17 @@ body.menu-open .nav-shell {
   .reveal {
     opacity: 1;
     transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .site-header,
+  .nav-shell,
+  .scroll-top {
+    transition: none;
   }
 }

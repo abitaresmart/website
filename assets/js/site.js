@@ -28,9 +28,42 @@ if (menuButton && menu) {
   });
 }
 
-const updateHeader = () => header?.classList.toggle("is-scrolled", window.scrollY > 12);
+const scrollTopButton = document.querySelector("[data-scroll-top]");
+const HIDE_AFTER = 260;
+let lastY = window.scrollY;
+
+const updateHeader = () => {
+  const y = Math.max(0, window.scrollY);
+  header?.classList.toggle("is-scrolled", y > 12);
+  if (header && Math.abs(y - lastY) > 4) {
+    const hide =
+      y > lastY &&
+      y > HIDE_AFTER &&
+      !document.body.classList.contains("menu-open") &&
+      !header.contains(document.activeElement);
+    header.classList.toggle("is-hidden", hide);
+    lastY = y;
+  }
+  scrollTopButton?.classList.toggle("is-visible", y > 600);
+};
 updateHeader();
 window.addEventListener("scroll", updateHeader, { passive: true });
+
+window.addEventListener(
+  "pointermove",
+  (event) => {
+    if (event.pointerType !== "mouse" || event.clientY > 90) return;
+    header?.classList.remove("is-hidden");
+  },
+  { passive: true },
+);
+
+header?.addEventListener("focusin", () => header.classList.remove("is-hidden"));
+
+scrollTopButton?.addEventListener("click", () => {
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
+});
 
 const revealElements = document.querySelectorAll(".reveal");
 if ("IntersectionObserver" in window) {
