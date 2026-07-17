@@ -31,11 +31,25 @@ if (menuButton && menu) {
 const scrollTopButton = document.querySelector("[data-scroll-top]");
 const HIDE_AFTER = 260;
 let lastY = window.scrollY;
+let anchorScrolling = false;
+let settleTimer;
+
+const suppressAutoHide = () => {
+  anchorScrolling = true;
+  header?.classList.remove("is-hidden");
+  clearTimeout(settleTimer);
+  settleTimer = setTimeout(() => {
+    anchorScrolling = false;
+  }, 160);
+};
 
 const updateHeader = () => {
   const y = Math.max(0, window.scrollY);
   header?.classList.toggle("is-scrolled", y > 12);
-  if (header && Math.abs(y - lastY) > 4) {
+  if (anchorScrolling) {
+    suppressAutoHide();
+    lastY = y;
+  } else if (header && Math.abs(y - lastY) > 4) {
     const hide =
       y > lastY &&
       y > HIDE_AFTER &&
@@ -48,6 +62,21 @@ const updateHeader = () => {
 };
 updateHeader();
 window.addEventListener("scroll", updateHeader, { passive: true });
+
+document.addEventListener("click", (event) => {
+  if (event.target.closest('a[href*="#"], [data-scroll-top]')) suppressAutoHide();
+});
+
+["wheel", "touchmove"].forEach((type) =>
+  window.addEventListener(
+    type,
+    () => {
+      anchorScrolling = false;
+      clearTimeout(settleTimer);
+    },
+    { passive: true },
+  ),
+);
 
 window.addEventListener(
   "pointermove",
